@@ -232,17 +232,16 @@ const Results = () => {
                 whileHover={{ scale: 1.02, y: -5 }}
               >
                 <div className="flex flex-col sm:flex-row">
-                  {/* Images Side by Side */}
-                  <div className="flex flex-1">
-                    
-                    <div className="relative h-[200px] sm:h-[250px] overflow-hidden group-hover:brightness-110 transition-all duration-300">
+                  {/* Single Image */}
+                  <div className="w-full sm:w-2/5 flex-shrink-0">
+                    <div className="relative h-[200px] sm:h-full min-h-[250px] overflow-hidden group-hover:brightness-110 transition-all duration-300">
                       <img
                         src={campaign.image}
-                        alt={`${campaign.name} campaign `}
+                        alt={`${campaign.name} campaign`}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-linear-to-bl from-purple-900/40 to-transparent" />
+                      <div className="absolute inset-0 bg-linear-to-r from-purple-900/40 via-transparent to-transparent" />
                     </div>
                   </div>
 
