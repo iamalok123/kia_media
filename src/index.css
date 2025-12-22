@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-primary: #d125f4;
+  --color-primary-dark: #b01ecd;
+  --color-background-light: #f8f5f8;
+  --color-background-dark: #171118;
+  --color-surface-dark: #1f1621;
+  --color-card-dark: #2a1f2d;
+  --color-border-dark: #362839;
+  
+  /* Fonts */
+  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Noto Sans", sans-serif;
+}
+
+/* Ensure custom colors work as Tailwind utilities */
+@layer utilities {
+  .border-border-dark {
+    border-color: var(--color-border-dark);
+  }
+  .bg-background-dark {
+    background-color: var(--color-background-dark);
+  }
+  .bg-surface-dark {
+    background-color: var(--color-surface-dark);
+  }
+  .bg-card-dark {
+    background-color: var(--color-card-dark);
+  }
+  .text-primary {
+    color: var(--color-primary);
+  }
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+  .bg-primary-dark {
+    background-color: var(--color-primary-dark);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #171118;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #362839;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d125f4;
+}
+
+/* Text gradient utility */
+.text-gradient {
+  background: linear-gradient(to right, #ffffff, #d125f4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body {
+  font-family: var(--font-display);
+  background-color: var(--color-background-dark);
+  color: white;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
