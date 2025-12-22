@@ -1,386 +1,218 @@
-PRODUCT REQUIREMENTS DOCUMENT (PRD)
-Project: Kia Media / Kia Mediaworks — One-Page Portfolio Website
-1. PRODUCT OVERVIEW
-Product Name
+# 🎵 Kia Mediaworks - Portfolio Website
 
-Kia Mediaworks Portfolio Website
+**🌐 Live Website:** [https://kia-mediaworks.vercel.app](https://kia-mediaworks.vercel.app)
 
-Product Type
 
-One-page scrolling portfolio website
+A premium, dark-themed one-page portfolio website for Kia Mediaworks - showcasing high-reach music and brand promotions through an extensive Instagram network of 800+ pages.
 
-Primary Goal
+---
 
-Lead generation via WhatsApp and Email
+## ✨ Features
 
-Build credibility and trust for music labels, apps, and media brands
+- **🎨 Premium Dark UI** - Black backgrounds with subtle purple gradients for a modern, premium aesthetic
+- **📱 Fully Responsive** - Mobile-first design that works seamlessly across all devices
+- **🎭 Smooth Animations** - Framer Motion powered animations for engaging user experience
+- **♾️ Infinite Scrolling** - Horizontal marquee effects for services and results sections
+- **🎯 Lead Generation** - Integrated WhatsApp and Email CTAs throughout the site
+- **⚡ Performance Optimized** - Fast loading with lazy-loaded images and optimized assets
+- **🎪 Interactive Cards** - Hover effects and premium card designs with gradient overlays
 
-Target Audience
+---
 
-Music labels
+## 🛠️ Tech Stack
 
-App startups
+- **React 19** - Modern React with functional components
+- **Vite** - Fast build tool and dev server
+- **Tailwind CSS v4** - Utility-first CSS framework
+- **Framer Motion** - Animation library for smooth transitions
+- **Lucide React** - Beautiful icon library
 
-Media agencies
+---
 
-Brand marketing teams
+## 🚀 Getting Started
 
-2. TECH STACK (MANDATORY)
-Frontend
+### Prerequisites
 
-React.js (Functional components only)
+- Node.js (v18 or higher)
+- npm or yarn
 
-Tailwind CSS (Utility-first styling)
+### Installation
 
-Optional / Recommended Tools
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/kia_media.git
+cd kia_media
+```
 
-Framer Motion → subtle animations (fade, slide, glow)
+2. Install dependencies
+```bash
+npm install
+```
 
-Lucide React / Heroicons → icons
+3. Start the development server
+```bash
+npm run dev
+```
 
-React Intersection Observer → scroll-based animations
+4. Open your browser and navigate to `http://localhost:5173`
 
-Next.js (optional) → SEO + performance (not mandatory)
+### Build for Production
 
-Restrictions
+```bash
+npm run build
+```
 
-❌ No heavy animation libraries
+The production-ready files will be in the `dist` folder.
 
-❌ No video autoplay
+### Preview Production Build
 
-❌ No unnecessary dependencies
+```bash
+npm run preview
+```
 
-3. DESIGN REQUIREMENTS
-Visual Style
+---
 
-Dark & modern
+## 📁 Project Structure
 
-Gradient-heavy aesthetic
+```
+kia_media/
+├── public/
+│   └── assets/          # Images and static assets
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx      # Navigation header
+│   │   ├── Hero.jsx        # Hero section with CTAs
+│   │   ├── Stats.jsx       # Trust metrics section
+│   │   ├── WhoWeAre.jsx    # About section
+│   │   ├── Services.jsx    # Services with horizontal scroll
+│   │   ├── Network.jsx     # Network breakdown
+│   │   ├── Results.jsx     # Campaign results
+│   │   ├── Portfolio.jsx   # Portfolio showcase
+│   │   ├── WhyChooseUs.jsx # Benefits section
+│   │   ├── FinalCTA.jsx    # Final call-to-action
+│   │   └── Footer.jsx       # Footer with social links
+│   ├── App.jsx          # Main app component
+│   ├── main.jsx         # Entry point
+│   └── index.css        # Global styles & Tailwind config
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
+```
 
-Color Palette
+---
 
-Primary: Black (#000000 / #0b0b0b)
+## 🎯 Sections
 
-Secondary: Deep Purple (#3b1d5a / #2a0e44)
+1. **Hero Section** - Full-screen hero with primary CTAs
+2. **Stats Section** - Trust metrics (800+ pages, 25M+ followers)
+3. **Who We Are** - Agency positioning and features
+4. **Services** - Horizontal scrolling service cards with icons
+5. **Network & Audience** - Network breakdown with progress bars
+6. **Results** - Campaign highlights with images
+7. **Portfolio** - Recent work showcase
+8. **Why Choose Us** - Competitive advantages
+9. **Final CTA** - Conversion-focused call-to-action
+10. **Footer** - Contact information and social links
 
-Accent: Neon purple / soft blue glow
+---
 
-Typography
+## 🎨 Design Features
 
-Font family: Inter / Poppins / Plus Jakarta Sans
+- **Color Scheme:**
+  - Primary: Black (#000000)
+  - Secondary: Deep Purple (#581c87)
+  - Accent: Fuchsia/Pink gradients
+  - Cards: Purple-900 with purple-800 borders
 
-Headings: Bold
+- **Typography:**
+  - Display: Plus Jakarta Sans
+  - Body: Noto Sans
 
-Body: Regular / Light
+- **Animations:**
+  - Scroll-triggered fade-ins
+  - Hover scale effects
+  - Smooth transitions
+  - Infinite marquee scrolling
 
-Layout Rules
+---
 
-Mobile-first
+## 📝 Available Scripts
 
-Fully responsive
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
-Maximum width container (e.g. max-w-7xl)
+---
 
-4. PAGE STRUCTURE (SINGLE PAGE)
+## 🔧 Configuration
 
-The website must consist of exactly 9 sections in the following order.
+### Update Contact Information
 
-SECTION 1: HERO SECTION
-Purpose
+Update WhatsApp and Email links in:
+- `src/components/Navbar.jsx`
+- `src/components/Hero.jsx`
+- `src/components/FinalCTA.jsx`
+- `src/components/Footer.jsx`
 
-Explain what the agency does and prompt immediate action.
+### Update Images
 
-Content Requirements
+Add campaign images to `public/assets/` and update paths in:
+- `src/components/Results.jsx` - Music and brand campaign images
+- `src/components/Portfolio.jsx` - Portfolio images
 
-Agency name:
+---
 
-“Kia Mediaworks” OR “Kia Media”
+## 📱 Responsive Breakpoints
 
-Primary headline:
+- Mobile: < 640px
+- Tablet: 640px - 1024px
+- Desktop: > 1024px
 
-“High-Reach Music & Brand Promotions Through 800+ Instagram Pages”
+---
 
-Subheadline:
+## 🌟 Key Features Implementation
 
-“We help music labels, apps, and media brands reach millions with targeted, high-engagement campaigns.”
+### Horizontal Scrolling Marquee
+- Services section with infinite scroll
+- Results section with campaign cards
+- Smooth animations with pause on hover
 
-CTA Buttons:
+### Premium Card Designs
+- Gradient overlays on hover
+- Icon-based service cards
+- Image-based result cards
+- Smooth scale and lift animations
 
-Primary: WhatsApp
+### Performance Optimizations
+- Lazy loading for images
+- Optimized animations
+- Efficient re-renders
+- Fast page load times
 
-Secondary: Email
+---
 
-UI / UX
+## 📞 Contact
 
-Full viewport height
+- **Email:** alokhotta10@gmail.com
+- **WhatsApp:** +91 9692604521
+- **Instagram:** [@your-handle](https://instagram.com/your-handle)
 
-Dark gradient background
+---
 
-Subtle animated gradient or grain
+## 📄 License
 
-Minimal text density
+This project is private and proprietary.
 
-SECTION 2: TRUST METRICS / QUICK STATS
-Purpose
+---
 
-Instant credibility
+## 🙏 Acknowledgments
 
-Content (Hardcoded Values)
+- Icons by [Lucide](https://lucide.dev/)
+- Animations by [Framer Motion](https://www.framer.com/motion/)
+- Styling by [Tailwind CSS](https://tailwindcss.com/)
 
-800+ Instagram Pages
+---
 
-25M+ Combined Followers
-
-2M–25M Reach Packages
-
-₹55K+ Starting Pricing
-
-UI
-
-Horizontal cards or counters
-
-Optional count-up animation
-
-Equal spacing
-
-SECTION 3: WHO WE ARE
-Purpose
-
-Positioning & clarity
-
-Content
-
-Short paragraph describing:
-
-Curated Instagram promotion network
-
-800+ pages
-
-Niches: Music, Bollywood, K-pop, Anime
-
-Organic engagement
-
-Bullet points:
-
-Drama & K-pop niche specialists
-
-Youth-focused audience (13–30)
-
-Global reach (India, USA, UK, Asia)
-
-SECTION 4: SERVICES
-Purpose
-
-Service clarity
-
-Structure
-
-Two-column layout OR tab-based switch
-
-4A. Promotion Services
-
-Song Promotions (Reels, Posts, Stories)
-
-Reel Promotions
-
-App Promotions
-
-Brand Promotions
-
-Logo Promotions
-
-Niche-targeted campaigns
-
-4B. Creative & Editing Services
-
-Short-form & Reel Editing
-
-Trend-based & Meme Edits
-
-Cinematic & Voiceover Reels
-
-Beat-sync transitions
-
-Subtitles, captions, dialogue reels
-
-Restrictions
-
-❌ No pricing
-
-❌ No package tables
-
-SECTION 5: NETWORK & AUDIENCE BREAKDOWN
-Purpose
-
-Distribution strength
-
-Network Breakdown
-
-Bollywood Pages — 400+
-
-K-pop & Asian Pages — 400+
-
-Anime Pages — 100+
-
-Wholesome / Lyrical Pages — 100+
-
-Audience Info
-
-Combined followers: 25M+
-
-Age group: 13–30
-
-Countries: India, USA, UK, Asia
-
-SECTION 6: RESULTS & CAMPAIGN HIGHLIGHTS
-Purpose
-
-Trust via performance proof
-
-Music Campaign Cards
-
-Each card must show:
-
-Campaign name
-
-Reach
-
-Duration
-
-Platform (Instagram)
-
-Campaigns:
-
-Gabriela — 10M / 7 days
-
-Golden — 25M / 30 days
-
-Dandelions — 3–5M / < 7 days
-
-Let Me Love You — 1.5M / 4–6 days
-
-Brand Campaign Cards
-
-Hitv — 100M+ engagement (6 pages)
-
-Boo App — 40M+ engagement, 1500+ clicks
-
-SECTION 7: PORTFOLIO / SAMPLE WORK
-Purpose
-
-Visual proof
-
-Content
-
-Reel embeds OR thumbnail previews
-
-Buttons:
-
-View Sample Reel
-
-View Story
-
-Performance Rules
-
-❌ No autoplay
-
-✔ Lazy loading
-
-✔ Optimized thumbnails
-
-SECTION 8: WHY CHOOSE KIA MEDIAWORKS
-Purpose
-
-Competitive differentiation
-
-Content (Exact Points)
-
-Niche specialists
-
-Proven track record
-
-Custom engagement packages
-
-Fast turnaround (24–48 hours)
-
-Performance-driven campaigns
-
-SECTION 9: FINAL CTA / CONTACT
-Purpose
-
-Conversion
-
-Content
-
-Headline:
-
-“Let’s Amplify Your Next Release”
-
-Supporting text
-
-Buttons:
-
-WhatsApp (Primary)
-
-Email (Secondary)
-
-Instagram link
-
-FOOTER
-Content
-
-Email address
-
-WhatsApp number
-
-Instagram handle
-
-Optional: LinkedIn
-
-5. NON-FUNCTIONAL REQUIREMENTS
-
-Lighthouse performance score ≥ 90
-
-SEO-friendly semantic HTML
-
-Accessible contrast ratios
-
-Smooth scrolling
-
-No unused components
-
-6. OUT OF SCOPE (DO NOT BUILD)
-
-Multi-page routing
-
-Forms
-
-Blog
-
-Testimonials
-
-Pricing calculators
-
-CMS
-
-Admin panel
-
-7. ACCEPTANCE CRITERIA
-
-The project is considered complete when:
-
-All 9 sections exist
-
-Content exactly matches PRD
-
-Mobile & desktop responsiveness confirmed
-
-WhatsApp & Email CTAs function correctly
-
-Dark modern UI is implemented
-
-8. PROMPT YOU CAN GIVE TO AI TOOLS (BONUS)
-
-Build a one-page dark modern portfolio website using React and Tailwind CSS following the provided PRD exactly. Use modular components, responsive design, subtle Framer Motion animations, and WhatsApp-focused CTAs.
-
-
+**Built with ❤️ for Kia Mediaworks**
