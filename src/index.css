@@ -86,6 +86,9 @@ body {
 }
 
 .animate-marquee {
+  display: flex;
+  gap: 4.5rem;
+  width: max-content;
   animation: marquee 30s linear infinite;
 }
 

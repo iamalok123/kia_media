@@ -54,7 +54,7 @@ const Hero = () => {
           className="text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed"
         >
           We help music labels, apps, and media brands reach millions with
-          targeted, high-engagement campaigns through our network of 800+
+          targeted, high-engagement campaigns through our network of 1000+
           Instagram pages.
         </motion.p>
 
