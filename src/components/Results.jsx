@@ -55,16 +55,16 @@ const Results = () => {
   const brandCampaigns = [
     {
       name: 'Hitv App',
-      description: 'Campaign across 6 pages',
+      description: 'Campaign across multiple pages',
       engagement: '100M+',
-      metric: 'Engagement',
+      metric: 'Combined Followers',
       image: 'assets/hitv.png',
     },
     {
       name: 'Boo App',
       description: 'Performance marketing',
       engagement: '40M+',
-      metric: 'Eng. / 1500+ Clicks',
+      metric: 'Promoted across  200+  pages',
       image: 'assets/boo app.jpg',
     },
   ];
@@ -200,9 +200,9 @@ const Results = () => {
                       </div>
                     </div>
 
-                    <div className="h-1 w-full bg-purple-800/50 rounded-full overflow-hidden">
+                    {/* <div className="h-1 w-full bg-purple-800/50 rounded-full overflow-hidden">
                       <div className="h-full w-0 group-hover:w-full bg-linear-to-r from-fuchsia-500 to-pink-500 transition-all duration-500" />
-                    </div>
+                    </div> */}
                   </div>
                 </motion.div>
               ))}
@@ -233,7 +233,7 @@ const Results = () => {
               >
                 <div className="flex flex-col sm:flex-row">
                   {/* Single Image */}
-                  <div className="w-full sm:w-2/5 flex-shrink-0">
+                  <div className="w-full sm:w-2/5 shrink-0">
                     <div className="relative h-[200px] sm:h-full min-h-[250px] overflow-hidden group-hover:brightness-110 transition-all duration-300">
                       <img
                         src={campaign.image}

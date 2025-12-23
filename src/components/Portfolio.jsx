@@ -1,35 +1,106 @@
 import React, { useRef } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion, useInView } from 'framer-motion';
-import { Play, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Portfolio = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  const portfolioItems = [
-    {
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDXljTahQ4IBO5GX0Pnee8vkOwlfYKAeoeIuHmVj8vWwajVNva6551TyKr5kwCoWIeWXa00AnlQxO5qO41bbvafjpnKPqwCM3fl-EDlCQdFPxHlji9bGO_5Xz_pIAJ2YcF6Jr4eldBnBEF9o0yFmB6F31Vm0Fb8D5g8eX0o4zWix6eHuvqLGpGmL_OdtzekEJLADiLEcaWW9gLTSHqj2g1gSMfYa8s4iwY2KTYD8Ua-55rPsI06TXJfzxgJDTZHm3JToN-9aHVd0vM',
-      alt: 'Vertical video thumbnail of a music video edit',
-    },
-    {
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBHQBAwQhncUTyMGv85ciVGoIROQnSjnl1Jv4p_1A9RDLkW0LXgNaFbYvHwqyuICtsa4DMYauK-CVpEza22GJs6S4SEQ5rmUXpo0TBPRpXNYqPHUf0Mo_7TrFBFrywt_dPviRYQybRGIj8OxS4-yz7iykuZggCHAOpq6HBl1z1UKMBqloR02WmUM50av4Y_v15luLbOXyCl7VbP2KHkTXCVKtMOwMjnubtexEEZMS0J42lJtvIedLQaLruC7wXobvnDnZtKKk2hrHs',
-      alt: 'Vertical video thumbnail of a brand promotion',
-    },
-    {
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBuHiHt6H2eRfvKktkMieEsWwnzUUbbime_4gJ6OHV12sijI-NmmZtYI_Q06_dV-BFBdL0UVUnI0_DwwJaq05uJewxui6HQe2jGwLD15G16RYmyM04eAj9iNMduHtVWCqr29N54rUAk1HGBCtgJTy4uJTZkQQXqOJEnyimJ0n8Nv_NUp-828sB8_Xp22jUXtkhwF-MTrwXvB-f8gpBdp4_1fXhDC9Bm10knYjLSSnpthuE9j1zkO5pv7f7Gb3XseH7HfFDyKw75TM4',
-      alt: 'Vertical video thumbnail of an anime edit',
-    },
-    {
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAE2ipg82BR6IG3v2SrnZBL19FtZ6Uxy4QUVS7lEGmINWsfa3ZKUl2sCfc-9mv3jr18F6MZku6D6KVBZkcz7HA8pHAx2q9CnBeyEOG0PZtLs7cwB7aZGs1ePx8ZgM8v14t5IsLT5KyrvBVGF1GxMbfI53WNHYNp7-9sDJ9ck7Fo8xfqTdkeYjXNzpQLxUuxTfDdHYiZ2-MzjYBv0OtGYrze_rKSEMKjr6LXk2fD-uqwonQRD18WGv5btDePttiMiCM19-aJ0JDOg_8',
-      alt: 'Vertical video thumbnail of a K-pop edit',
-    },
+  // Category 1: After Effects Edits
+  const aeVideos = [
+    { src: '/videos/AE/1.mp4', title: 'Motion Graphics', category: 'After Effects' },
+    { src: '/videos/AE/10.mp4', title: 'Visual Effects', category: 'After Effects' },
+    { src: '/videos/AE/12.mp4', title: 'Title Animation', category: 'After Effects' },
+    { src: '/videos/AE/4.mov', title: 'Logo Reveal', category: 'After Effects' },
+    { src: '/videos/AE/AE.mp4', title: 'Intro Sequence', category: 'After Effects' },
   ];
 
-  return (
-    <section className="py-20 bg-linear-to-b from-black via-purple-950/20 to-black" id="portfolio" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  // Category 2: Meme Edits
+  const memeVideos = [
+    { src: '/videos/meme/lv_0_20250611111501.mp4', title: 'Trending Meme', category: 'Meme Edit' },
+    { src: '/videos/meme/lv_0_20250611112306.mp4', title: 'Viral Content', category: 'Meme Edit' },
+    { src: '/videos/meme/lv_0_20250611115335.mp4', title: 'Comedy Reel', category: 'Meme Edit' },
+    { src: '/videos/meme/lv_0_20250613112229.mp4', title: 'Reaction Edit', category: 'Meme Edit' },
+    { src: '/videos/meme/lv_0_20250624011250.mp4', title: 'Meme Compilation', category: 'Meme Edit' },
+  ];
 
+  // Category 3: Music Videos
+  const musicVideos = [
+    { src: '/videos/music/10.mp4', title: 'Music Promo', category: 'Music Video' },
+    { src: '/videos/music/12.mp4', title: 'Lyric Video', category: 'Music Video' },
+    { src: '/videos/music/13.mp4', title: 'Beat Sync Edit', category: 'Music Video' },
+    { src: '/videos/music/4.mp4', title: 'Album Teaser', category: 'Music Video' },
+    { src: '/videos/music/6.mp4', title: 'Concert Highlight', category: 'Music Video' },
+  ];
+
+  // Category 4: Other Edits
+  const otherVideos = [
+    { src: '/videos/other/1.mp4', title: 'Brand Story', category: 'Other' },
+    { src: '/videos/other/2.mp4', title: 'Product Showcase', category: 'Other' },
+    { src: '/videos/other/3.mp4', title: 'Event Highlight', category: 'Other' },
+    { src: '/videos/other/4.mp4', title: 'Documentary Style', category: 'Other' },
+  ];
+
+  // Category 5: Voice Over Edits
+  const voiceVideos = [
+    { src: '/videos/voice/1.mp4', title: 'Narration Edit', category: 'Voice Over' },
+    { src: '/videos/voice/10.mp4', title: 'Podcast Clip', category: 'Voice Over' },
+    { src: '/videos/voice/12.mp4', title: 'Storytelling', category: 'Voice Over' },
+    { src: '/videos/voice/3.mp4', title: 'Explainer Video', category: 'Voice Over' },
+    { src: '/videos/voice/5.mp4', title: 'Audio Visual', category: 'Voice Over' },
+  ];
+
+  // All categories
+  const categories = [
+    { title: 'After Effects Edits', subtitle: 'Premium motion graphics & visual effects', items: aeVideos },
+    { title: 'Meme Edits', subtitle: 'Viral meme content & trending formats', items: memeVideos },
+    { title: 'Music Videos', subtitle: 'Dynamic music visualizations & edits', items: musicVideos },
+    { title: 'Other Edits', subtitle: 'Creative & versatile video content', items: otherVideos },
+    { title: 'Voice Over Edits', subtitle: 'Professional voice-over content', items: voiceVideos },
+  ];
+
+  // Video Card Component with HTML5 video
+  const VideoCard = ({ item, index }) => {
+    return (
+      <motion.div
+        key={index}
+        className="group relative bg-purple-900/40 rounded-2xl overflow-hidden cursor-pointer border border-purple-500/40 shadow-lg shadow-purple-500/30 hover:border-fuchsia-500/60 hover:shadow-xl hover:shadow-fuchsia-500/40 transition-all duration-300"
+        whileHover={{ y: -8, scale: 1.02 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: index * 0.05 }}
+      >
+        {/* HTML5 Video Player */}
+        <div className="relative w-full aspect-[9/16]">
+          <video
+            src={item.src}
+            className="absolute inset-0 w-full h-full object-cover"
+            controls
+            playsInline
+            preload="metadata"
+          />
+        </div>
+
+        {/* Content overlay */}
+        <div className="p-4 bg-black/60">
+          <span className="text-fuchsia-400 text-xs font-semibold uppercase tracking-wider">
+            {item.category}
+          </span>
+          <h4 className="text-white font-bold text-lg mt-1">{item.title}</h4>
+        </div>
+      </motion.div>
+    );
+  };
+
+  return (
+    <section className="py-20 bg-gradient-to-b from-black via-purple-950/20 to-black relative overflow-hidden" id="portfolio" ref={ref}>
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-fuchsia-500/5 rounded-full blur-3xl translate-y-1/2 translate-x-1/2" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Header */}
         <motion.div
           className="flex justify-between items-end mb-12"
           initial={{ opacity: 0, y: 20 }}
@@ -37,7 +108,10 @@ const Portfolio = () => {
           transition={{ duration: 0.6 }}
         >
           <div>
-            <h2 className="text-3xl font-bold text-white mb-2">Recent Work</h2>
+            <h2 className="text-fuchsia-500 font-bold tracking-wider text-sm uppercase mb-2">
+              Portfolio
+            </h2>
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">Recent Work</h3>
             <p className="text-gray-400">Examples of our edits and viral placements.</p>
           </div>
 
@@ -49,38 +123,32 @@ const Portfolio = () => {
           </a>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {portfolioItems.map((item, index) => (
+        {/* Category Sections */}
+        <div className="space-y-16">
+          {categories.map((category, catIndex) => (
             <motion.div
-              key={index}
-              className="group relative aspect-9/16 bg-purple-900 rounded-xl overflow-hidden cursor-pointer"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
+              key={catIndex}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.5, delay: catIndex * 0.1 }}
             >
-              <img
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                alt={item.alt}
-                loading="lazy"
-                src={item.image}
-              />
-
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="w-12 h-12 bg-purple-500/90 rounded-full flex items-center justify-center text-white backdrop-blur-sm shadow-lg">
-                  <Play className="w-6 h-6" />
-                </div>
+              {/* Category Header */}
+              <div className="mb-6">
+                <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
+                  {category.title}
+                </h4>
+                <p className="text-gray-500 text-sm">{category.subtitle}</p>
               </div>
 
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-linear-to-t from-black/90 to-transparent translate-y-full group-hover:translate-y-0 transition-transform">
-                <button className="w-full bg-white text-black text-xs font-bold py-2 rounded">
-                  View Reel
-                </button>
+              {/* Video Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+                {category.items.map((item, index) => (
+                  <VideoCard key={`${catIndex}-${index}`} item={item} index={index} />
+                ))}
               </div>
             </motion.div>
           ))}
         </div>
-
       </div>
     </section>
   );

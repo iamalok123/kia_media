@@ -8,8 +8,9 @@ const Network = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const networkData = [
-    { label: 'Bollywood Pages', value: '400+', percentage: 50, color: 'bg-purple-500' },
-    { label: 'K-pop & Asian Pages', value: '400+', percentage: 50, color: 'bg-purple-400' },
+    { label: 'K-pop & Asian Pages', value: '500+', percentage: 70, color: 'bg-purple-400' },
+    { label: 'Bollywood Pages', value: '200+', percentage: 60, color: 'bg-purple-500' },
+    { label: 'Influencer and Theme based Pages', value: '200+', percentage: 50, color: 'bg-purple-500' },
     { label: 'Anime Pages', value: '100+', percentage: 12, color: 'bg-blue-500' },
     { label: 'Wholesome / Lyrical Pages', value: '100+', percentage: 12, color: 'bg-green-500' },
   ];
@@ -82,7 +83,7 @@ const Network = () => {
               <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mb-4">
                 <Users className="text-white w-6 h-6" />
               </div>
-              <div className="text-3xl font-bold text-white mb-1">25M+</div>
+              <div className="text-3xl font-bold text-white mb-1">100M+</div>
               <div className="text-sm text-gray-400">Combined Followers</div>
             </motion.div>
 
@@ -96,7 +97,7 @@ const Network = () => {
                 <User className="text-white w-6 h-6" />
               </div>
               <div className="text-3xl font-bold text-white mb-1">13–30</div>
-              <div className="text-sm text-gray-400">Core Age Group</div>
+              <div className="text-sm text-gray-400">Core Age Group (80%)</div>
             </motion.div>
 
             <motion.div

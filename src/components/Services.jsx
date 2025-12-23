@@ -52,13 +52,6 @@ const Services = () => {
       iconColor: 'text-indigo-400',
     },
     {
-      icon: Image,
-      title: 'Logo Promotions',
-      description: 'Brand visibility',
-      color: 'from-cyan-500/20 to-blue-500/20',
-      iconColor: 'text-cyan-400',
-    },
-    {
       icon: Target,
       title: 'Niche Campaigns',
       description: 'Targeted marketing',
@@ -67,38 +60,10 @@ const Services = () => {
     },
     {
       icon: Film,
-      title: 'Reel Editing',
+      title: 'Comprehensive Editing Services',
       description: 'Short-form content',
       color: 'from-fuchsia-500/20 to-pink-500/20',
       iconColor: 'text-fuchsia-400',
-    },
-    {
-      icon: Sparkles,
-      title: 'Meme Edits',
-      description: 'Trend-based content',
-      color: 'from-yellow-500/20 to-orange-500/20',
-      iconColor: 'text-yellow-400',
-    },
-    {
-      icon: TrendingUp,
-      title: 'Cinematic Reels',
-      description: 'Voiceover & transitions',
-      color: 'from-emerald-500/20 to-teal-500/20',
-      iconColor: 'text-emerald-400',
-    },
-    {
-      icon: Zap,
-      title: 'Beat Sync',
-      description: 'Music transitions',
-      color: 'from-rose-500/20 to-pink-500/20',
-      iconColor: 'text-rose-400',
-    },
-    {
-      icon: Users,
-      title: 'Subtitles & Captions',
-      description: 'Engaging dialogue reels',
-      color: 'from-amber-500/20 to-yellow-500/20',
-      iconColor: 'text-amber-400',
     },
     {
       icon: Globe,

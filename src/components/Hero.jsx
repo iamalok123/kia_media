@@ -32,7 +32,7 @@ const Hero = () => {
           className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-purple-500 text-xs font-bold uppercase tracking-wider mb-2"
         >
           <span className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
-          Digital Promotion Agency
+          Creative Digital Growth
         </motion.div>
 
         <motion.h1
@@ -41,9 +41,9 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-5xl md:text-7xl font-black leading-tight tracking-tight text-white max-w-4xl"
         >
-          High-Reach Music & <br />
+          Kia Media Works <br />
           <span className="bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-pink-500">
-            Brand Promotions
+            Organic Reel Marketing & Editing
           </span>
         </motion.h1>
 
@@ -53,9 +53,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed"
         >
-          We help music labels, apps, and media brands reach millions with
-          targeted, high-engagement campaigns through our network of 1000+
-          Instagram pages.
+          We help music labels and brands promote their music and products organically through reel marketing, gaining visibility via high-engagement campaigns across our network of 1,000+ Instagram pages.
         </motion.p>
 
         {/* Buttons */}
