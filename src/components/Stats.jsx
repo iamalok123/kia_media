@@ -7,10 +7,10 @@ const Stats = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const stats = [
-    { label: 'Instagram Pages', value: '800+', delay: 0 },
-    { label: 'Combined Followers', value: '25M+', delay: 0.1 },
+    { label: 'Instagram Pages', value: '1000+', delay: 0 },
+    { label: 'Combined Followers', value: '100M+', delay: 0.1 },
     { label: 'Reach Packages', value: '2M–25M', delay: 0.2 },
-    { label: 'Starting Pricing', value: '₹55K+', delay: 0.3 },
+    // { label: 'Starting Pricing', value: '₹55K+', delay: 0.3 },
   ];
 
   return (
