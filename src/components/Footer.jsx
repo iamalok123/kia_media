@@ -1,7 +1,7 @@
 import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { Mail, Instagram, Phone } from 'lucide-react';
+import { Mail, Instagram, Phone, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   const handleEmail = () => {
@@ -14,6 +14,10 @@ const Footer = () => {
 
   const handlePhone = () => {
     window.location.href = 'tel:+918099589858';
+  };
+
+  const handleLinkedin = () => {
+    window.open('https://www.linkedin.com/in/kunhismita-madhukalya-3b03b236a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', '_blank');
   };
 
   // Footer Links Data
@@ -48,12 +52,11 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="flex items-center gap-2 mb-4">
-              <div className="bg-purple-500/20 p-1.5 rounded text-purple-500">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
-                </svg>
-              </div>
-              <h4 className="text-white font-bold text-lg">Kia Mediaworks</h4>
+              <img
+                src="assets/kiamedia.jpeg"
+                alt="Kia Mediaworks"
+                className="h-14 w-auto object-contain"
+              />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
               Premium video editing and social media marketing services to help your brand go viral.
@@ -86,6 +89,15 @@ const Footer = () => {
                 aria-label="Phone"
               >
                 <Phone className="w-5 h-5" />
+              </motion.button>
+              <motion.button
+                onClick={handleLinkedin}
+                className="bg-purple-500/10 p-2 rounded-lg text-purple-400 hover:text-white hover:bg-purple-500/20 transition-all"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
               </motion.button>
             </div>
           </motion.div>
@@ -192,8 +204,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </div >
+    </footer >
   );
 };
 

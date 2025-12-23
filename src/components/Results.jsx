@@ -34,7 +34,7 @@ const Results = () => {
       reach: '1.5M',
       duration: '4-6 Days',
       platform: 'Instagram',
-      image: 'assets/letmeloveyou.jpg',
+      image: 'https://i1.sndcdn.com/artworks-000178696713-pifi3d-t500x500.jpg',
     },
     {
       name: 'Summer Vibes',

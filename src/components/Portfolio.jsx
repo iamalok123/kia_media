@@ -66,7 +66,7 @@ const Portfolio = () => {
     return (
       <motion.div
         key={index}
-        className="group relative bg-purple-900/40 rounded-2xl overflow-hidden cursor-pointer border border-purple-500/40 shadow-lg shadow-purple-500/30 hover:border-fuchsia-500/60 hover:shadow-xl hover:shadow-fuchsia-500/40 transition-all duration-300"
+        className="group relative rounded-2xl overflow-hidden cursor-pointer border border-purple-500/40 shadow-lg shadow-purple-500/30 hover:border-fuchsia-500/60 hover:shadow-xl hover:shadow-fuchsia-500/40 transition-all duration-300"
         whileHover={{ y: -8, scale: 1.02 }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -76,19 +76,11 @@ const Portfolio = () => {
         <div className="relative w-full aspect-9/16">
           <video
             src={item.src}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover rounded-2xl"
             controls
             playsInline
             preload="metadata"
           />
-        </div>
-
-        {/* Content overlay */}
-        <div className="p-4 bg-black/60">
-          <span className="text-fuchsia-400 text-xs font-semibold uppercase tracking-wider">
-            {item.category}
-          </span>
-          <h4 className="text-white font-bold text-lg mt-1">{item.title}</h4>
         </div>
       </motion.div>
     );
