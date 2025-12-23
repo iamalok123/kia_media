@@ -16,22 +16,21 @@ const Navbar = () => {
   }, []);
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/your-number', '_blank');
+    window.open('https://wa.me/8099589858', '_blank');
   };
 
   const navLinks = [
     { href: '#about', label: 'Who We Are' },
+    { href: '#campaigns', label: 'Campaigns' },
     { href: '#services', label: 'Services' },
     { href: '#network', label: 'Network' },
-    { href: '#results', label: 'Results' },
-    { href: '#portfolio', label: 'Portfolio' },
+    { href: '#edits', label: 'Edits' },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-purple-900/30 transition-all duration-300 ${
-        isScrolled ? 'shadow-lg shadow-purple-950/50' : ''
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-purple-900/30 transition-all duration-300 ${isScrolled ? 'shadow-lg shadow-purple-950/50' : ''
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">

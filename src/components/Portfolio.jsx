@@ -40,6 +40,7 @@ const Portfolio = () => {
     { src: '/videos/other/2.mp4', title: 'Product Showcase', category: 'Other' },
     { src: '/videos/other/3.mp4', title: 'Event Highlight', category: 'Other' },
     { src: '/videos/other/4.mp4', title: 'Documentary Style', category: 'Other' },
+    { src: '/videos/AE/10.mp4', title: 'Visual Effects', category: 'Other' },
   ];
 
   // Category 5: Voice Over Edits
@@ -94,7 +95,7 @@ const Portfolio = () => {
   };
 
   return (
-    <section className="py-20 bg-linear-to-b from-black via-purple-950/20 to-black relative overflow-hidden" id="portfolio" ref={ref}>
+    <section className="py-20 bg-linear-to-b from-black via-purple-950/20 to-black relative overflow-hidden" id="edits" ref={ref}>
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-fuchsia-500/5 rounded-full blur-3xl translate-y-1/2 translate-x-1/2" />
@@ -111,12 +112,12 @@ const Portfolio = () => {
             <h2 className="text-fuchsia-500 font-bold tracking-wider text-sm uppercase mb-2">
               Portfolio
             </h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">Recent Work</h3>
+            <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">Sample Edits</h3>
             <p className="text-gray-400">Examples of our edits and viral placements.</p>
           </div>
 
           <a
-            href="#portfolio"
+            href="#edits"
             className="text-purple-500 hover:text-white transition-colors text-sm font-bold flex items-center gap-1"
           >
             See All <ArrowRight className="w-4 h-4" />

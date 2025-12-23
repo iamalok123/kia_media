@@ -8,10 +8,12 @@ const WhyChooseUs = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const reasons = [
-    { icon: CheckCircle, text: 'Niche specialists' },
-    { icon: TrendingUp, text: 'Proven track record' },
-    { icon: Settings, text: 'Custom engagement packages' },
-    { icon: Zap, text: 'Fast turnaround (24–48 hours)' },
+    { icon: CheckCircle, text: 'Organic & genuine marketing with customized strategies' },
+    { icon: TrendingUp, text: 'End-to-end support from planning to tracking' },
+    { icon: Settings, text: 'Niche specialists in Asian drama & K-pop marketing' },
+    { icon: Zap, text: 'Proven track record with real results' },
+    { icon: BarChart3, text: 'Custom engagement packages' },
+    { icon: BarChart3, text: 'Fast turnaround (24–48 hours)' },
     { icon: BarChart3, text: 'Performance-driven campaigns' },
   ];
 

@@ -8,15 +8,15 @@ const FinalCTA = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/your-number', '_blank');
+    window.open('https://wa.me/8099589858', '_blank');
   };
 
   const handleEmail = () => {
-    window.location.href = 'mailto:your-email@example.com';
+    window.location.href = 'mailto:kia.mediaworks.co@gmail.com';
   };
 
   const handleInstagram = () => {
-    window.open('https://instagram.com/your-handle', '_blank');
+    window.open('https://instagram.com/kiamediaworks?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank');
   };
 
   return (

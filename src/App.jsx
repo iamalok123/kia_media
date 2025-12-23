@@ -16,11 +16,11 @@ const App = () => {
     <div className="bg-black text-white font-display overflow-x-hidden antialiased">
       <Navbar />
       <Hero />
-      <Stats />
-      <WhoWeAre />
+      {/* <Stats /> */}
+      <WhoWeAre />  
+      <Results />    
       <Services />
       <Network />
-      <Results />
       <Portfolio />
       <WhyChooseUs />
       <FinalCTA />

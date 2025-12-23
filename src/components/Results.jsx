@@ -20,7 +20,7 @@ const Results = () => {
       reach: '25M',
       duration: '30 Days',
       platform: 'Instagram',
-      image: 'assets/golden.jpg' ,
+      image: 'assets/golden.jpg',
     },
     {
       name: 'Dandelions',
@@ -54,10 +54,10 @@ const Results = () => {
 
   const brandCampaigns = [
     {
-      name: 'Hitv App',
+      name: 'HiTv App',
       description: 'Campaign across multiple pages',
       engagement: '100M+',
-      metric: 'Combined Followers',
+      metric: 'Monthly Followers',
       image: 'assets/hitv.png',
     },
     {
@@ -70,7 +70,7 @@ const Results = () => {
   ];
 
   return (
-    <section className="py-20 bg-linear-to-b from-black via-purple-950/30 to-black" id="results" ref={ref}>
+    <section className="py-20 bg-linear-to-b from-black via-purple-950/30 to-black" id="campaigns" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -78,7 +78,7 @@ const Results = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold text-white mb-4">Proven Results</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Past Campaigns</h2>
           <p className="text-gray-400">Our campaigns speak for themselves.</p>
         </motion.div>
 
@@ -115,7 +115,7 @@ const Results = () => {
                     />
                     {/* Gradient overlay */}
                     <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
-                    
+
                     {/* Top badge */}
                     <div className="absolute top-4 right-4 bg-purple-500/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1.5">
                       <Instagram className="w-3.5 h-3.5 text-white" />
@@ -149,7 +149,7 @@ const Results = () => {
                       </div>
                     </div>
 
-                    
+
                   </div>
                 </motion.div>
               ))}

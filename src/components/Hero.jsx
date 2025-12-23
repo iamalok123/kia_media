@@ -57,7 +57,7 @@ const Hero = () => {
         </motion.p>
 
         {/* Buttons */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -81,10 +81,10 @@ const Hero = () => {
             <Mail className="w-5 h-5" />
             Email Us
           </motion.button>
-        </motion.div>
+        </motion.div> */}
 
         {/* Scroll Indicator */}
-        <div className='flex flex-col items-center justify-center gap-2 mt-4 animate-bounce cursor-pointer'>
+        <div className='flex flex-col items-center justify-center gap-2 mt-8 animate-bounce cursor-pointer'>
           <span className='text-white font-medium'>Scroll Down</span>
           <img src="double-arrow.svg" alt="double-arrow" />
         </div>

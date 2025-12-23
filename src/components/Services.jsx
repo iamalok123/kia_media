@@ -60,7 +60,7 @@ const Services = () => {
     },
     {
       icon: Film,
-      title: 'Comprehensive Editing Services',
+      title: 'Comprehensive Editing',
       description: 'Short-form content',
       color: 'from-fuchsia-500/20 to-pink-500/20',
       iconColor: 'text-fuchsia-400',
