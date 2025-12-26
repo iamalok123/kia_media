@@ -78,6 +78,7 @@ const Portfolio = () => {
             src={item.src}
             className="absolute inset-0 w-full h-full object-cover rounded-2xl"
             controls
+            controlsList="nofullscreen"
             playsInline
             preload="metadata"
           />

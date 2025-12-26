@@ -8,7 +8,7 @@ const FinalCTA = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/8099589858', '_blank');
+    window.open('https://wa.me/918099589858', '_blank');
   };
 
   const handleEmail = () => {

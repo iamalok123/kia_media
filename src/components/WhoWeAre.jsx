@@ -35,7 +35,8 @@ const WhoWeAre = () => {
               <img
                 className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                 alt="Collage of viral social media posts and music album covers"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvpdv_WOW_ITLg6DtpVBrMOkcmuIoYWwo9NY6mYN7Ndelahm13ig5KXrItvZue8RJUSKlScfBKvRubVsFuedQf3KVb4kIDBFFDJqMPvKHIes15jvPF_wnF_2COjV8Jo8FKFrktTsi5DYBH17nFi4dcqQLFpHheTj0duVEfMgBCZC_cKHTvTxNz1Kga8abxEolrtqOwGT7ycsxNvbUaodRAkKAjKwkzN5j1RHZAs2uthac9jIcuBiCwedlPPafPR8apHC8widWmWTM"
+                // src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvpdv_WOW_ITLg6DtpVBrMOkcmuIoYWwo9NY6mYN7Ndelahm13ig5KXrItvZue8RJUSKlScfBKvRubVsFuedQf3KVb4kIDBFFDJqMPvKHIes15jvPF_wnF_2COjV8Jo8FKFrktTsi5DYBH17nFi4dcqQLFpHheTj0duVEfMgBCZC_cKHTvTxNz1Kga8abxEolrtqOwGT7ycsxNvbUaodRAkKAjKwkzN5j1RHZAs2uthac9jIcuBiCwedlPPafPR8apHC8widWmWTM"
+                src="banner.png"
                 loading="lazy"
               />
             </div>

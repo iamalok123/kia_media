@@ -5,7 +5,7 @@ import { MessageCircle, Mail, ChevronDown } from "lucide-react";
 
 const Hero = () => {
   const handleWhatsApp = () => {
-    window.open("https://wa.me/9692604521", "_blank");
+    window.open("https://wa.me/918099589858", "_blank");
   };
 
   const handleEmail = () => {
@@ -32,7 +32,7 @@ const Hero = () => {
           className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-purple-500 text-xs font-bold uppercase tracking-wider mb-2"
         >
           <span className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
-          Creative Digital Growth
+          Creative Digital Agency
         </motion.div>
 
         <motion.h1

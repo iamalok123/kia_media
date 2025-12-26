@@ -13,7 +13,7 @@ const Footer = () => {
   };
 
   const handlePhone = () => {
-    window.location.href = 'tel:+918099589858';
+    window.location.href = 'tel:+916900068659';
   };
 
   const handleLinkedin = () => {
@@ -157,11 +157,11 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="tel:+918099589858"
+                  href="tel:+916900068659"
                   className="text-gray-400 hover:text-purple-400 transition-colors text-sm flex items-center gap-2"
                 >
                   <Phone className="w-4 h-4" />
-                  +91 8099589858
+                  +91 6900068659
                 </a>
               </li>
               <li>
