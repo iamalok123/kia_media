@@ -44,7 +44,7 @@ const Footer = () => {
     { name: 'App Promotion', href: '#' },
     { name: 'Reel Promotion', href: '#' },
     { name: 'Editing', href: '#' },
-    { name: 'Neiche Campains', href: '#' },
+    { name: 'Niche Campaigns', href: '#' },
   ];
 
   return (
