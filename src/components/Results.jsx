@@ -17,8 +17,8 @@ const Results = () => {
     },
     {
       name: 'Golden',
-      reach: '25M',
-      duration: '< 3 Days',
+      reach: '10M',
+      duration: '7 Days',
       platform: 'Instagram',
       image: 'assets/golden.jpg',
     },
@@ -92,7 +92,7 @@ const Results = () => {
       name: 'JO1',
       description: 'Jpop Group',
       engagement: '',
-      metric: 'Indian Promotion',
+      metric: 'Indian PR',
       image: 'https://nonno.hpplus.jp/wp-content/uploads/org/aa/aa57405681c1d65598ed6f04cfee7036_1080x1383_h.jpg',
     },
   ];

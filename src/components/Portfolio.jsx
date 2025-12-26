@@ -73,12 +73,11 @@ const Portfolio = () => {
         transition={{ duration: 0.4, delay: index * 0.05 }}
       >
         {/* HTML5 Video Player */}
-        <div className="relative w-full aspect-9/16">
+        <div className="relative w-full aspect-9/16 bg-black">
           <video
             src={item.src}
-            className="absolute inset-0 w-full h-full object-cover rounded-2xl"
+            className="absolute inset-0 w-full h-full object-contain rounded-2xl"
             controls
-            controlsList="nofullscreen"
             playsInline
             preload="metadata"
           />
