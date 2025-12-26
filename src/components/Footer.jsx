@@ -21,20 +21,30 @@ const Footer = () => {
   };
 
   // Footer Links Data
+
+  // const pages = [
+  //   { name: 'Home', href: '#' },
+  //   { name: 'About', href: '#about' },
+  //   { name: 'Contact Us', href: '#contact' },
+  //   { name: 'Work with us', href: '#work' },
+  // ];
   const pages = [
     { name: 'Home', href: '#' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact Us', href: '#contact' },
-    { name: 'Blogs', href: '#blogs' },
-    { name: 'Work with us', href: '#work' },
+    { name: 'Who We Are', href: '#about' },
+    { name: 'Campaigns', href: '#campaigns' },
+    { name: 'Services', href: '#services' },
+    { name: 'Network', href: '#network' },
+    { name: 'Edits', href: '#edits' },
   ];
 
   const services = [
-    { name: 'Spotify Promotion', href: '#' },
     { name: 'Instagram Marketing', href: '#' },
-    { name: 'Meta Ads', href: '#' },
-    { name: 'Youtube Ads', href: '#' },
-    { name: 'Creative Assets', href: '#' },
+    { name: 'Song Promotion', href: '#' },
+    { name: 'Brand Promotion', href: '#' },
+    { name: 'App Promotion', href: '#' },
+    { name: 'Reel Promotion', href: '#' },
+    { name: 'Editing', href: '#' },
+    { name: 'Neiche Campains', href: '#' },
   ];
 
   return (
