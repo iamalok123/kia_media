@@ -92,7 +92,7 @@ const Results = () => {
       name: 'JO1',
       description: 'Jpop Group',
       engagement: '',
-      metric: 'Pages Working',
+      metric: 'Indian Promotion',
       image: 'https://nonno.hpplus.jp/wp-content/uploads/org/aa/aa57405681c1d65598ed6f04cfee7036_1080x1383_h.jpg',
     },
   ];
