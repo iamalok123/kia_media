@@ -36,7 +36,7 @@ const Portfolio = () => {
 
   // Category 4: Other Edits
   const otherVideos = [
-    { src: '/videos/other/1.mp4', title: 'Brand Story', category: 'Other' },
+    { src: '/videos/other/1234.mp4', title: 'Brand Story', category: 'Other' },
     { src: '/videos/other/2.mp4', title: 'Product Showcase', category: 'Other' },
     { src: '/videos/other/3.mp4', title: 'Event Highlight', category: 'Other' },
     { src: '/videos/other/4.mp4', title: 'Documentary Style', category: 'Other' },
