@@ -5,7 +5,7 @@ import { MessageCircle, Mail, ChevronDown } from "lucide-react";
 
 const Hero = () => {
   const handleWhatsApp = () => {
-    window.open("https://wa.me/918099589858", "_blank");
+    window.open('https://wa.me/918099589858', '_blank');
   };
 
   const handleEmail = () => {
