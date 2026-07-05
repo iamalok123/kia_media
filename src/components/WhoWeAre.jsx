@@ -20,9 +20,6 @@ const WhoWeAre = () => {
     { title: 'Strong presence in India, USA, UK & Asia' },
   ];
 
-  // Dummy architecture for partner/client logos. 
-  // Simply replace the 'src' value with the path to your actual image (e.g., 'assets/microsoft.png').
-  // The component will automatically render the image instead of the dummy text once a src is provided.
   const partnerLogos = [
     { id: 1, name: 'Microsoft', src: 'company_logos/unacadamy.svg' },
     { id: 2, name: 'Framer', src: 'company_logos/netflix.png' },
@@ -42,6 +39,7 @@ const WhoWeAre = () => {
           transition={{ duration: 0.8 }}
           className="mb-16 bg-[#111111]/80 border border-white/5 rounded-xl py-8 px-6 md:px-12 backdrop-blur-md"
         >
+          <h3 className="text-center text-gray-400 font-medium mb-8 uppercase tracking-widest text-sm">Worked With</h3>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 transition-opacity duration-500">
             {partnerLogos.map((logo) => (
               <div 
