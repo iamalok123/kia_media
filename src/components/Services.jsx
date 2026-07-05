@@ -2,91 +2,73 @@ import React, { useRef } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion, useInView } from 'framer-motion';
 import {
+  Music,
+  Rocket,
+  Tv,
+  Globe,
   Megaphone,
   Film,
-  Music,
-  Smartphone,
-  Briefcase,
-  Image,
-  Video,
   Sparkles,
-  TrendingUp,
-  Users,
+  Sprout,
   Target,
-  Zap,
-  Globe,
-  BarChart3,
+  Users
 } from 'lucide-react';
 
 const Services = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  const services = [
-    {
-      icon: Music,
-      title: 'Song Promotions',
-      description: 'Reels, Posts, Stories',
-      color: 'from-blue-500/20 to-purple-500/20',
-      iconColor: 'text-blue-400',
-    },
-    {
-      icon: Video,
-      title: 'Reel Promotions',
-      description: 'Viral content distribution',
-      color: 'from-purple-500/20 to-pink-500/20',
-      iconColor: 'text-purple-400',
-    },
-    {
-      icon: Smartphone,
-      title: 'App Promotions',
-      description: 'Mobile app marketing',
-      color: 'from-pink-500/20 to-red-500/20',
-      iconColor: 'text-pink-400',
-    },
-    {
-      icon: Briefcase,
-      title: 'Brand Promotions',
-      description: 'Corporate campaigns',
-      color: 'from-indigo-500/20 to-blue-500/20',
-      iconColor: 'text-indigo-400',
-    },
-    {
-      icon: Target,
-      title: 'Niche Campaigns',
-      description: 'Targeted marketing',
-      color: 'from-violet-500/20 to-purple-500/20',
-      iconColor: 'text-violet-400',
-    },
-    {
-      icon: Film,
-      title: 'Comprehensive Editing',
-      description: 'Short-form content',
-      color: 'from-fuchsia-500/20 to-pink-500/20',
-      iconColor: 'text-fuchsia-400',
-    },
-    {
-      icon: Globe,
-      title: 'Global Reach',
-      description: 'Worldwide distribution',
-      color: 'from-sky-500/20 to-cyan-500/20',
-      iconColor: 'text-sky-400',
-    },
+  const row1 = [
+    { icon: Music, title: 'Organic Music Marketing', color: 'from-blue-500/20 to-purple-500/20', iconColor: 'text-blue-400' },
+    { icon: Rocket, title: 'Song Launch Campaigns', color: 'from-purple-500/20 to-pink-500/20', iconColor: 'text-purple-400' },
+    { icon: Tv, title: 'OTT & Drama Promotions', color: 'from-pink-500/20 to-red-500/20', iconColor: 'text-pink-400' },
+    { icon: Globe, title: 'Asian Entertainment Marketing', color: 'from-indigo-500/20 to-blue-500/20', iconColor: 'text-indigo-400' },
+    { icon: Megaphone, title: 'Brand Awareness Campaigns', color: 'from-violet-500/20 to-purple-500/20', iconColor: 'text-violet-400' },
   ];
+
+  const row2 = [
+    { icon: Film, title: 'Hollywood Entertainment Marketing', color: 'from-fuchsia-500/20 to-pink-500/20', iconColor: 'text-fuchsia-400' },
+    { icon: Sparkles, title: 'Anime Marketing', color: 'from-sky-500/20 to-cyan-500/20', iconColor: 'text-sky-400' },
+    { icon: Sprout, title: 'Seeding Campaigns', color: 'from-emerald-500/20 to-teal-500/20', iconColor: 'text-emerald-400' },
+    { icon: Target, title: 'Targeted Creator Campaigns', color: 'from-amber-500/20 to-orange-500/20', iconColor: 'text-amber-400' },
+    { icon: Users, title: 'Influencer & Non-Face Creator Campaigns', color: 'from-rose-500/20 to-pink-500/20', iconColor: 'text-rose-400' },
+  ];
+
+  const ServiceCard = ({ service }) => {
+    const Icon = service.icon;
+    return (
+      <div className="group relative shrink-0 w-64 sm:w-[280px] h-40 bg-purple-950/40 backdrop-blur-xl border border-purple-700/30 rounded-3xl p-5 flex flex-col justify-between cursor-pointer hover:border-purple-500/50 transition-all duration-300 hover:shadow-[0_8px_30px_rgb(209,37,244,0.1)]">
+        <div className={`absolute inset-0 bg-linear-to-br ${service.color} opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-300`} />
+        
+        <div className="relative z-10 flex flex-col h-full justify-between">
+          <div className={`w-12 h-12 rounded-xl bg-linear-to-br ${service.color} flex items-center justify-center mb-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-inner`}>
+            <Icon className={`${service.iconColor} w-6 h-6 group-hover:text-white transition-colors duration-300`} />
+          </div>
+          <h4 className="text-base md:text-lg font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-300 leading-snug whitespace-normal">
+            {service.title}
+          </h4>
+        </div>
+
+        <div className="absolute bottom-0 left-0 h-1.5 w-full bg-transparent overflow-hidden rounded-b-3xl">
+          <div className={`h-full w-0 group-hover:w-full bg-linear-to-r ${service.color} transition-all duration-500 ease-out`} />
+        </div>
+      </div>
+    );
+  };
 
   return (
     <section
-      className="py-20 bg-linear-to-b from-black via-purple-950/25 to-black relative overflow-hidden"
+      className="py-20 bg-linear-to-b from-black via-purple-950/20 to-black relative overflow-hidden"
       id="services"
       ref={ref}
     >
       {/* Decoration */}
-      <div className="absolute top-0 right-0 w-125 h-125 bg-fuchsia-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-125 h-125 bg-purple-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-125 h-125 bg-fuchsia-500/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-125 h-125 bg-purple-500/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
@@ -94,79 +76,29 @@ const Services = () => {
           <h2 className="text-fuchsia-500 font-bold tracking-wider text-sm uppercase mb-2">
             Our Services
           </h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h3 className="text-3xl md:text-5xl font-black text-white mb-4">
             Comprehensive Media Solutions
           </h3>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Premium services designed to amplify your brand's reach and engagement
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+            Premium services designed to amplify your brand's reach and engagement.
           </p>
         </motion.div>
 
-        {/* Infinite Scrolling Marquee */}
-        <div className="relative overflow-hidden">
-          <div className="flex animate-marquee whitespace-nowrap gap-6">
-            {/* First set of cards */}
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <motion.div
-                  key={index}
-                  className="group relative shrink-0 w-70 sm:w-[320px] h-50 sm:h-55 bg-linear-to-br bg-purple-900/40 backdrop-blur-sm border border-purple-800/50 rounded-2xl p-6 flex flex-col justify-between cursor-pointer hover:border-fuchsia-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-fuchsia-500/20"
-                  whileHover={{ y: -8 }}
-                >
-                  {/* Gradient overlay on hover */}
-                  <div className={`absolute inset-0 bg-linear-to-br ${service.color} opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-300`} />
-                  
-                  {/* Content */}
-                  <div className="relative z-10">
-                    <div className={`w-14 h-14 rounded-xl bg-linear-to-br ${service.color} flex items-center justify-center mb-4 transition-transform duration-300`}>
-                      <Icon className={`${service.iconColor} w-7 h-7 group-hover:text-white transition-colors duration-300`} />
-                    </div>
-                    <h4 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-fuchsia-400 group-hover:to-pink-400 transition-all duration-300">
-                      {service.title}
-                    </h4>
-                    <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-                      {service.description}
-                    </p>
-                  </div>
+        {/* First Row - Moving Left */}
+        <div className="relative overflow-hidden mb-4 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 mask-edges">
+          <div className="flex animate-marquee whitespace-nowrap gap-6 py-4">
+            {[...row1, ...row1, ...row1, ...row1].map((service, index) => (
+              <ServiceCard key={`row1-${index}`} service={service} />
+            ))}
+          </div>
+        </div>
 
-                  {/* Bottom accent line */}
-                  <div className="relative z-10 h-1 w-full bg-purple-800/50 rounded-full overflow-hidden">
-                    <div className={`h-full w-0 group-hover:w-full bg-linear-to-r ${service.color} transition-all duration-500`} />
-                  </div>
-                </motion.div>
-              );
-            })}
-            
-            {/* Duplicate set for seamless loop */}
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <motion.div
-                  key={`duplicate-${index}`}
-                  className="group relative shrink-0 w-70 sm:w-[320px] h-50 sm:h-55 bg-linear-to-br bg-purple-900/40 backdrop-blur-sm border border-purple-800/50 rounded-2xl p-6 flex flex-col justify-between cursor-pointer hover:border-fuchsia-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-fuchsia-500/20"
-                  whileHover={{ y: -4 }}
-                >
-                  <div className={`absolute inset-0 bg-linear-to-br ${service.color} opacity-0 group-hover:opacity-100 rounded-2xl transition-opacity duration-500`} />
-                  
-                  <div className="relative z-10">
-                    <div className={`w-14 h-14 rounded-xl bg-linear-to-br ${service.color} flex items-center justify-center mb-4  transition-transform duration-300`}>
-                      <Icon className={`${service.iconColor} w-7 h-7 group-hover:text-white transition-colors duration-300`} />
-                    </div>
-                    <h4 className="text-xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-fuchsia-400 group-hover:to-pink-400 transition-all duration-300">
-                      {service.title}
-                    </h4>
-                    <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-                      {service.description}
-                    </p>
-                  </div>
-
-                  <div className="relative z-10 h-1 w-full bg-purple-800/50 rounded-full overflow-hidden">
-                    <div className={`h-full w-0 group-hover:w-full bg-linear-to-r ${service.color} transition-all duration-500`} />
-                  </div>
-                </motion.div>
-              );
-            })}
+        {/* Second Row - Moving Right */}
+        <div className="relative overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 mask-edges">
+          <div className="flex animate-marquee-reverse whitespace-nowrap gap-6 py-4">
+            {[...row2, ...row2, ...row2, ...row2].map((service, index) => (
+              <ServiceCard key={`row2-${index}`} service={service} />
+            ))}
           </div>
         </div>
       </div>

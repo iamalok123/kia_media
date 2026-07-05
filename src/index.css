@@ -96,6 +96,27 @@ body {
   animation-play-state: paused;
 }
 
+/* Reverse Marquee Animation */
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  gap: 4.5rem;
+  width: max-content;
+  animation: marquee-reverse 30s linear infinite;
+}
+
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
 /* Fullscreen video handling for mobile - supports both 16:9 and 9:16 aspect ratios */
 video:fullscreen,
 video:-webkit-full-screen,
