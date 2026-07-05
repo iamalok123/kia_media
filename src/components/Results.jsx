@@ -231,28 +231,28 @@ const Results = () => {
       organic_reach: '100M',
       deliverables: '1500+',
       campain_size: 'Large',
-      image: 'https://cdn.aptoide.com/imgs/5/0/b/50b2f6114f334e0099e663d7029dd3e7_screen.jpg',
+      image: 'app&ott/dash_reels.png',
     },
     {
       name: "Short Free Mini Drama Campaign",
       organic_reach: "300M",
       deliverables: "1500+",
       campain_size: "Large",
-      image: "https://img.utdstc.com/screen/2c9/861/2c98612ecf2329b4a9aebfab0eac5d40ded86d8fef1afa1c8c21e5676ea568e8:600",
+      image: "app&ott/short_free.png",
     },
     {
       name: "Perfect Crown Kdrama JioHotstar OTT Campaign",
       organic_reach: "5M",
       deliverables: "30+",
       campain_size: "Mini",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPgaVUZeeIFHAPRQkCOD6CKHO88LOoX14b9hgTASiHNfBr4wwdi4y5JSg&s=10",
+      image: "app&ott/perfect_crown.png",
     },
     {
       name: "Spring Fever Primevideo OTT Kdrama Campaign",
       organic_reach: "15M",
       deliverables: "200+",
       campain_size: "Medium",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3a2IAmq9j8ggM-fKukl8RLgdA3TRoRPHrhq3_5fYRLAaMhBptO8BLXagg&s=10",
+      image: "app&ott/spring_fever.png",
     }
   ];
 
