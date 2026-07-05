@@ -38,7 +38,7 @@ const Results = () => {
       deliverables: 60,
       campaignSize: "Medium",
       platform: "Instagram",
-      image: "https://i.ytimg.com/vi/vHg9WMmSfZ4/maxresdefault.jpg",
+      image: "https://c.saavncdn.com/795/Pardesiya-From-Param-Sundari-Hindi-2025-20250729184535-500x500.jpg",
     },
     {
       name: "Dandelions",
@@ -90,13 +90,13 @@ const Results = () => {
         "https://static.qobuz.com/images/covers/sa/sg/q3b5o097bsgsa_600.jpg",
     },
     {
-      name: "Table",
+      name: "Talab",
       reach: "2M",
       deliverables: 50,
       campaignSize: "Small",
       platform: "Instagram",
       image:
-        "https://static.qobuz.com/images/covers/sa/sg/q3b5o097bsgsa_600.jpg",
+        "https://i.ytimg.com/vi/PuOa12YK2R8/maxresdefault.jpg",
     },
     {
       name: "New Riot",
