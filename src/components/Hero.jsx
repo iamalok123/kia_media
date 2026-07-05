@@ -24,12 +24,12 @@ const Hero = () => {
       <div className="absolute inset-0 z-0 bg-linear-to-b from-black via-purple-950/40 to-black" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 text-center flex flex-col items-center gap-6">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 text-center flex flex-col items-center gap-4 md:gap-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-purple-500 text-xs font-bold uppercase tracking-wider mb-2"
+          className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-purple-500 text-xs font-bold uppercase tracking-wider mb-2 md:mb-4"
         >
           <span className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
           Creative Digital Agency
@@ -39,11 +39,11 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-7xl font-black leading-tight tracking-tight text-white max-w-4xl"
+          className="text-3xl md:text-5xl lg:text-6xl font-black leading-[1.2] tracking-tight text-white max-w-5xl mx-auto"
         >
           Kia Media Works <br />
-          <span className="bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-pink-500">
-            Organic Reel Marketing & Editing
+          <span className="bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-pink-500 ">
+            Organic Instagram Marketing & Editing for Music Labels, OTT Platforms & Entertainment Brands
           </span>
         </motion.h1>
 
@@ -51,37 +51,10 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed"
+          className="text-sm md:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed mt-2"
         >
           We help music labels and brands promote their music and products organically through reel marketing, gaining visibility via high-engagement campaigns across our network of 1,000+ Instagram pages.
         </motion.p>
-
-        {/* Buttons */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 mt-6 w-full sm:w-auto"
-        >
-          <motion.button
-            onClick={handleWhatsApp}
-            className="flex items-center justify-center gap-2 bg-purple-500 hover:bg-purple-600 text-white text-base font-bold h-12 px-8 rounded-lg shadow-lg transition-all w-full sm:w-auto"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <MessageCircle className="w-5 h-5" />
-            WhatsApp
-          </motion.button>
-          <motion.button
-            onClick={handleEmail}
-            className="flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white text-base font-bold h-12 px-8 rounded-lg backdrop-blur-sm transition-all w-full sm:w-auto"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <Mail className="w-5 h-5" />
-            Email Us
-          </motion.button>
-        </motion.div> */}
 
         {/* Scroll Indicator */}
         <div className='flex flex-col items-center justify-center gap-2 mt-8 animate-bounce cursor-pointer'>

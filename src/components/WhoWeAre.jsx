@@ -8,7 +8,7 @@ const WhoWeAre = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const networkFeatures = [
-    { title: 'Worked with 50+ songs and 30+ brands in the last 6 months' },
+    { title: 'Delivered 200+ campaigns with proven success across the last 18 months.' },
     { title: 'Generated 1B+ total Instagram Reel reach' },
     { title: 'From edit & fan pages to influencers' },
     { title: 'End-to-end execution with timeline-based delivery' },
@@ -20,9 +20,50 @@ const WhoWeAre = () => {
     { title: 'Strong presence in India, USA, UK & Asia' },
   ];
 
+  // Dummy architecture for partner/client logos. 
+  // Simply replace the 'src' value with the path to your actual image (e.g., 'assets/microsoft.png').
+  // The component will automatically render the image instead of the dummy text once a src is provided.
+  const partnerLogos = [
+    { id: 1, name: 'Microsoft', src: 'company_logos/unacadamy.svg' },
+    { id: 2, name: 'Framer', src: 'company_logos/netflix.png' },
+    { id: 3, name: 'Instagram', src: 'company_logos/dashverse.png' },
+    { id: 4, name: 'HUAWEI', src: 'company_logos/primevideo.png' },
+    { id: 5, name: 'Walmart', src: 'company_logos/jiohotstar.png' },
+  ];
+
   return (
     <section className="py-20 bg-linear-to-b from-black via-purple-950/20 to-black" id="about" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Partner Logos Strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.8 }}
+          className="mb-16 bg-[#111111]/80 border border-white/5 rounded-xl py-8 px-6 md:px-12 backdrop-blur-md"
+        >
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 transition-opacity duration-500">
+            {partnerLogos.map((logo) => (
+              <div 
+                key={logo.id} 
+                className="group relative flex items-center justify-center transition-all duration-300 w-24 h-12 md:w-32 md:h-16"
+              >
+                {/* Renders actual image if 'src' exists, otherwise renders styled dummy placeholder */}
+                {logo.src ? (
+                  <img 
+                    src={logo.src} 
+                    alt={logo.name} 
+                    className="w-full h-full object-contain relative z-10 opacity-70 grayscale group-hover:scale-110 transition-all duration-300" 
+                  />
+                ) : (
+                  <div className="relative z-10 flex items-center justify-center text-base md:text-lg font-medium text-gray-500 group-hover:scale-110 transition-all duration-300 cursor-default text-center">
+                    {logo.name}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </motion.div>
         <div className="flex flex-col lg:flex-row gap-12 items-center">
           <motion.div
             className="lg:w-1/2"
@@ -30,12 +71,11 @@ const WhoWeAre = () => {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative rounded-2xl overflow-hidden border border-purple-800 shadow-2xl">
-              <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent z-10" />
+            <div className="relative rounded-2xl overflow-hidden border border-purple-800 shadow-2xl bg-[#0a0a0a] w-full aspect-5/4 flex items-center justify-center">
+              <div className="absolute inset-0 bg-linear-to-t from-black/90 via-transparent to-transparent z-10 pointer-events-none" />
               <img
-                className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
-                alt="Collage of viral social media posts and music album covers"
-                // src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvpdv_WOW_ITLg6DtpVBrMOkcmuIoYWwo9NY6mYN7Ndelahm13ig5KXrItvZue8RJUSKlScfBKvRubVsFuedQf3KVb4kIDBFFDJqMPvKHIes15jvPF_wnF_2COjV8Jo8FKFrktTsi5DYBH17nFi4dcqQLFpHheTj0duVEfMgBCZC_cKHTvTxNz1Kga8abxEolrtqOwGT7ycsxNvbUaodRAkKAjKwkzN5j1RHZAs2uthac9jIcuBiCwedlPPafPR8apHC8widWmWTM"
+                className="absolute inset-0 w-full h-full object-cover z-0"
+                alt="Banner placeholder"
                 src="banner.png"
                 loading="lazy"
               />
@@ -58,7 +98,7 @@ const WhoWeAre = () => {
             </div>
 
             <p className="text-gray-300 text-lg leading-relaxed">
-              We operate a vast network of 1000+ pages specializing in Music, Bollywood, K-pop, and Anime niches.
+              We operate a vast network of 1000+ pages specializing in Kdrama-Asian niche, Hollywood,Bollywood, K-pop,Music, and Anime niches.
             </p>
 
             {/* Our Network & Reach */}
