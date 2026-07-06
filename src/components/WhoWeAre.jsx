@@ -21,44 +21,89 @@ const WhoWeAre = () => {
   ];
 
   const partnerLogos = [
-    { id: 1, name: 'Microsoft', src: 'company_logos/unacadamy.svg' },
-    { id: 2, name: 'Framer', src: 'company_logos/netflix.png' },
-    { id: 3, name: 'Instagram', src: 'company_logos/dashverse.png' },
-    { id: 4, name: 'HUAWEI', src: 'company_logos/primevideo.png' },
-    { id: 5, name: 'Walmart', src: 'company_logos/jiohotstar.png' },
+    { id: 1, name: 'Microsoft', src: 'https://archive.siasat.com/wp-content/uploads/2022/09/vxvagvw.jpg' },
+    { id: 2, name: 'Framer', src: 'https://i.ytimg.com/vi/ZMak63mHq5Y/maxresdefault.jpg' },
+    { id: 3, name: 'Instagram', src: 'https://media.licdn.com/dms/image/sync/v2/D4D27AQFYk6fE7vdnbA/articleshare-shrink_800/B4DZktDNwxJIAI-/0/1757397442291?e=2147483647&v=beta&t=Y3vkwNswykmzWMa8g7bYNdgnSAMY-otpILwxzBXtMpc' },
+    { id: 4, name: 'HUAWEI', src: 'https://m.media-amazon.com/images/G/01/primevideo/seo/primevideo-seo-logo.png' },
+    { id: 5, name: 'Walmart', src: 'https://etimg.etb2bimg.com/photo/118235487.cms' },
   ];
 
   return (
     <section className="py-20 bg-linear-to-b from-black via-purple-950/20 to-black" id="about" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Partner Logos Strip */}
+        {/* Partner Logos — Individual Premium Cards */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8 }}
-          className="mb-16 bg-[#111111]/80 border border-white/5 rounded-xl py-8 px-6 md:px-12 backdrop-blur-md"
+          className="mb-16"
         >
-          <h3 className="text-center text-gray-400 font-medium mb-8 uppercase tracking-widest text-sm">Worked With</h3>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 transition-opacity duration-500">
-            {partnerLogos.map((logo) => (
-              <div 
-                key={logo.id} 
-                className="group relative flex items-center justify-center transition-all duration-300 w-24 h-12 md:w-32 md:h-16"
+          <h3 className="text-center text-white/60 font-semibold mb-10 uppercase tracking-[0.25em] text-xs">
+            Worked With
+          </h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {partnerLogos.map((logo, index) => (
+              <motion.div
+                key={logo.id}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                transition={{ duration: 0.6, delay: 0.1 + index * 0.12 }}
+                className="group relative rounded-2xl overflow-hidden cursor-pointer"
+                style={{ aspectRatio: '4/3' }}
               >
-                {/* Renders actual image if 'src' exists, otherwise renders styled dummy placeholder */}
-                {logo.src ? (
-                  <img 
-                    src={logo.src} 
-                    alt={logo.name} 
-                    className="w-full h-full object-contain relative z-10 opacity-70 grayscale group-hover:scale-110 transition-all duration-300" 
+                {/* Gradient border glow */}
+                <div
+                  className="absolute inset-0 rounded-2xl p-[1.5px] z-0"
+                  style={{
+                    background: [
+                      'linear-gradient(135deg, #a855f7, #ec4899)',
+                      'linear-gradient(135deg, #06b6d4, #6366f1)',
+                      'linear-gradient(135deg, #f59e0b, #ef4444)',
+                      'linear-gradient(135deg, #10b981, #3b82f6)',
+                      'linear-gradient(135deg, #8b5cf6, #f43f5e)',
+                    ][index % 5],
+                  }}
+                >
+                  <div className="w-full h-full rounded-2xl bg-[#0d0d0d]" />
+                </div>
+
+                {/* Image area — object-contain so full logo is always visible */}
+                <div className="absolute inset-[1.5px] rounded-2xl overflow-hidden z-10 flex items-center justify-center bg-[#111118]">
+                  {/* Subtle radial glow backdrop */}
+                  <div
+                    className="absolute inset-0 opacity-25"
+                    style={{
+                      background: [
+                        'radial-gradient(circle at center, #a855f7 0%, transparent 70%)',
+                        'radial-gradient(circle at center, #06b6d4 0%, transparent 70%)',
+                        'radial-gradient(circle at center, #f59e0b 0%, transparent 70%)',
+                        'radial-gradient(circle at center, #10b981 0%, transparent 70%)',
+                        'radial-gradient(circle at center, #8b5cf6 0%, transparent 70%)',
+                      ][index % 5],
+                    }}
                   />
-                ) : (
-                  <div className="relative z-10 flex items-center justify-center text-base md:text-lg font-medium text-gray-500 group-hover:scale-110 transition-all duration-300 cursor-default text-center">
-                    {logo.name}
-                  </div>
-                )}
-              </div>
+                  <img
+                    src={logo.src}
+                    alt={logo.name}
+                    className="relative z-10 w-[85%] h-[75%] object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-xl"
+                  />
+                  {/* Coloured shimmer on hover */}
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-15 transition-opacity duration-400"
+                    style={{
+                      background: [
+                        'linear-gradient(135deg, #a855f7, #ec4899)',
+                        'linear-gradient(135deg, #06b6d4, #6366f1)',
+                        'linear-gradient(135deg, #f59e0b, #ef4444)',
+                        'linear-gradient(135deg, #10b981, #3b82f6)',
+                        'linear-gradient(135deg, #8b5cf6, #f43f5e)',
+                      ][index % 5],
+                    }}
+                  />
+                </div>
+
+              </motion.div>
             ))}
           </div>
         </motion.div>
