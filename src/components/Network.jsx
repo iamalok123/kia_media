@@ -17,8 +17,8 @@ const Network = () => {
   ];
 
   const geographyData = [
-    { label: 'Asia (South Korea, Japan, China, SEA & others)', value: '60%' },
-    { label: 'India', value: '30%' },
+    { label: 'Asia (South Korea, Japan, China, SEA & others)', value: '40%' },
+    { label: 'India', value: '20%' },
     { label: 'UK & USA', value: '20%' },
     { label: 'Global Audience', value: '20%' },
   ];

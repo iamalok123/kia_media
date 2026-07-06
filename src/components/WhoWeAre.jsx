@@ -31,8 +31,8 @@ const WhoWeAre = () => {
   return (
     <section className="py-20 bg-linear-to-b from-black via-purple-950/20 to-black" id="about" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Partner Logos — Individual Premium Cards */}
+
+        {/* Partner Logos — Infinite Marquee Scroll */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -42,69 +42,69 @@ const WhoWeAre = () => {
           <h3 className="text-center text-white/60 font-semibold mb-10 uppercase tracking-[0.25em] text-xs">
             Worked With
           </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-            {partnerLogos.map((logo, index) => (
-              <motion.div
-                key={logo.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ duration: 0.6, delay: 0.1 + index * 0.12 }}
-                className="group relative rounded-2xl overflow-hidden cursor-pointer"
-                style={{ aspectRatio: '4/3' }}
-              >
-                {/* Gradient border glow */}
-                <div
-                  className="absolute inset-0 rounded-2xl p-[1.5px] z-0"
-                  style={{
-                    background: [
-                      'linear-gradient(135deg, #a855f7, #ec4899)',
-                      'linear-gradient(135deg, #06b6d4, #6366f1)',
-                      'linear-gradient(135deg, #f59e0b, #ef4444)',
-                      'linear-gradient(135deg, #10b981, #3b82f6)',
-                      'linear-gradient(135deg, #8b5cf6, #f43f5e)',
-                    ][index % 5],
-                  }}
-                >
-                  <div className="w-full h-full rounded-2xl bg-[#0d0d0d]" />
-                </div>
 
-                {/* Image area — object-contain so full logo is always visible */}
-                <div className="absolute inset-[1.5px] rounded-2xl overflow-hidden z-10 flex items-center justify-center bg-[#111118]">
-                  {/* Subtle radial glow backdrop */}
+          {/* Marquee wrapper — overflow hidden + edge fade masks */}
+          <div
+            className="relative overflow-hidden"
+            style={{
+              maskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)',
+              WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)',
+            }}
+          >
+            {/* Scrolling track — doubled for seamless loop */}
+            <div className="animate-marquee" style={{ gap: '2rem', animationDuration: '18s' }}>
+              {[...partnerLogos, ...partnerLogos].map((logo, index) => {
+                const accentIndex = index % 5;
+                const gradients = [
+                  'linear-gradient(135deg, #a855f7, #ec4899)',
+                  'linear-gradient(135deg, #06b6d4, #6366f1)',
+                  'linear-gradient(135deg, #f59e0b, #ef4444)',
+                  'linear-gradient(135deg, #10b981, #3b82f6)',
+                  'linear-gradient(135deg, #8b5cf6, #f43f5e)',
+                ];
+                const radials = [
+                  'radial-gradient(circle at center, #a855f7 0%, transparent 70%)',
+                  'radial-gradient(circle at center, #06b6d4 0%, transparent 70%)',
+                  'radial-gradient(circle at center, #f59e0b 0%, transparent 70%)',
+                  'radial-gradient(circle at center, #10b981 0%, transparent 70%)',
+                  'radial-gradient(circle at center, #8b5cf6 0%, transparent 70%)',
+                ];
+                return (
                   <div
-                    className="absolute inset-0 opacity-25"
-                    style={{
-                      background: [
-                        'radial-gradient(circle at center, #a855f7 0%, transparent 70%)',
-                        'radial-gradient(circle at center, #06b6d4 0%, transparent 70%)',
-                        'radial-gradient(circle at center, #f59e0b 0%, transparent 70%)',
-                        'radial-gradient(circle at center, #10b981 0%, transparent 70%)',
-                        'radial-gradient(circle at center, #8b5cf6 0%, transparent 70%)',
-                      ][index % 5],
-                    }}
-                  />
-                  <img
-                    src={logo.src}
-                    alt={logo.name}
-                    className="relative z-10 w-[85%] h-[75%] object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-xl"
-                  />
-                  {/* Coloured shimmer on hover */}
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-15 transition-opacity duration-400"
-                    style={{
-                      background: [
-                        'linear-gradient(135deg, #a855f7, #ec4899)',
-                        'linear-gradient(135deg, #06b6d4, #6366f1)',
-                        'linear-gradient(135deg, #f59e0b, #ef4444)',
-                        'linear-gradient(135deg, #10b981, #3b82f6)',
-                        'linear-gradient(135deg, #8b5cf6, #f43f5e)',
-                      ][index % 5],
-                    }}
-                  />
-                </div>
+                    key={`${logo.id}-${index}`}
+                    className="group relative rounded-2xl overflow-hidden cursor-pointer shrink-0"
+                    style={{ width: '200px', height: '150px' }}
+                  >
+                    {/* Gradient border glow */}
+                    <div
+                      className="absolute inset-0 rounded-2xl z-0"
+                      style={{ background: gradients[accentIndex], padding: '1.5px' }}
+                    >
+                      <div className="w-full h-full rounded-2xl bg-[#0d0d0d]" />
+                    </div>
 
-              </motion.div>
-            ))}
+                    {/* Image area */}
+                    <div className="absolute inset-[1.5px] rounded-2xl overflow-hidden z-10 flex items-center justify-center bg-[#111118]">
+                      {/* Radial glow backdrop */}
+                      <div
+                        className="absolute inset-0 opacity-25"
+                        style={{ background: radials[accentIndex] }}
+                      />
+                      <img
+                        src={logo.src}
+                        alt={logo.name}
+                        className="relative z-10 w-[85%] h-[75%] object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-xl"
+                      />
+                      {/* Colour shimmer on hover */}
+                      <div
+                        className="absolute inset-0 opacity-0 group-hover:opacity-15 transition-opacity duration-400"
+                        style={{ background: gradients[accentIndex] }}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </motion.div>
         <div className="flex flex-col lg:flex-row gap-12 items-center">

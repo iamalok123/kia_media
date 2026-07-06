@@ -9,7 +9,7 @@
   --color-surface-dark: #1f1621;
   --color-card-dark: #2a1f2d;
   --color-border-dark: #362839;
-  
+
   /* Fonts */
   --font-display: "Plus Jakarta Sans", sans-serif;
   --font-body: "Noto Sans", sans-serif;
@@ -20,21 +20,27 @@
   .border-border-dark {
     border-color: var(--color-border-dark);
   }
+
   .bg-background-dark {
     background-color: var(--color-background-dark);
   }
+
   .bg-surface-dark {
     background-color: var(--color-surface-dark);
   }
+
   .bg-card-dark {
     background-color: var(--color-card-dark);
   }
+
   .text-primary {
     color: var(--color-primary);
   }
+
   .bg-primary {
     background-color: var(--color-primary);
   }
+
   .bg-primary-dark {
     background-color: var(--color-primary-dark);
   }
@@ -80,6 +86,7 @@ body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -101,6 +108,7 @@ body {
   0% {
     transform: translateX(-50%);
   }
+
   100% {
     transform: translateX(0);
   }
