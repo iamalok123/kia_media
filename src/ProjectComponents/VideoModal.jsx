@@ -25,7 +25,11 @@ const VideoModal = ({ category, videoId, onClose }) => {
             <button onClick={onClose} className="absolute top-6 right-6 text-white/80 hover:text-white">
                 <X className="w-8 h-8" />
             </button>
-            <div className="w-full max-w-4xl" style={{ aspectRatio: '16 / 9' }} onClick={(e) => e.stopPropagation()}>
+            <div
+                className="relative max-h-[90vh] w-auto"
+                style={{ aspectRatio: '9 / 16', maxWidth: 'calc(90vh * 9 / 16)' }}
+                onClick={(e) => e.stopPropagation()}
+            >
                 {error && (
                     <div className="w-full h-full flex flex-col items-center justify-center text-white/80 gap-2">
                         <AlertCircle className="w-10 h-10 text-red-400" />
@@ -41,7 +45,7 @@ const VideoModal = ({ category, videoId, onClose }) => {
                         controls
                         autoPlay
                         playsInline
-                        className="w-full h-full rounded-xl bg-black"
+                        className="w-full h-full rounded-xl bg-black object-contain"
                         onError={() => setError(true)}
                     />
                 )}
