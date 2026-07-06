@@ -180,7 +180,7 @@ const Footer = () => {
                   className="text-gray-400 hover:text-purple-400 transition-colors text-sm flex items-center gap-2"
                 >
                   <Mail className="w-4 h-4" />
-                  kia.mediaworks.co@gmail.co
+                  kia.mediaworks.co@gmail.com
                 </a>
               </li>
               <li>
@@ -202,7 +202,7 @@ const Footer = () => {
         <div className="border-t border-purple-900/30 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 text-sm">
-              © 2024 Kia Mediaworks. All rights reserved.
+              © 2025 Kia Mediaworks. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a href="#" className="text-gray-500 hover:text-purple-400 transition-colors text-sm">

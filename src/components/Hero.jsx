@@ -14,14 +14,14 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center opacity-40"
-        style={{
-          backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuCFU6p3wcIGB3eEamnHY11jM6JhhzIqz0Iq9K_kjdW1XaQLpGNC54XpiEG_p3CvlijGQEbGxFqhRCZnwI2pKHX6cQzA9i61eg35zhIOMRY2LmtvlG7bkpxE8E2CktSWnWHh-V-BCNCfe9n96JPe2slGRB91u98RPO1KgbXaYa19qJWBB4TfgVdiKfYGwTJw1hgaLNOrsFV8Baxwjh62wT7W_3HJNeDTZeChZ1Mdl4lMACnQRZZkeCeNEKlcLXD_3IsHzWNGV3I-9sQ')`,
-        }}
-      />
-      <div className="absolute inset-0 z-0 bg-linear-to-b from-black via-purple-950/40 to-black" />
+      {/* Decorative background gradient orbs — replaces external image dependency */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-950/60 via-black/80 to-black" />
+        <div className="absolute -top-40 left-1/4 w-[500px] h-[500px] bg-purple-700/25 rounded-full blur-[120px]" />
+        <div className="absolute top-1/3 -right-20 w-[400px] h-[400px] bg-fuchsia-600/20 rounded-full blur-[100px]" />
+        <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-purple-900/30 rounded-full blur-[90px]" />
+      </div>
+      <div className="absolute inset-0 z-0 bg-linear-to-b from-black/30 via-purple-950/20 to-black" />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 text-center flex flex-col items-center gap-4 md:gap-6">
