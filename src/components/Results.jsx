@@ -199,6 +199,14 @@ const Results = () => {
       platform: "Instagram",
       image: "https://i.ytimg.com/vi/R9FovwkbFIM/maxresdefault.jpg",
     },
+    {
+      name: "Giraft",
+      reach: "2M",
+      deliverables: 15,
+      campaignSize: "Small",
+      platform: "Instagram",
+      image: "https://i.scdn.co/image/ab67616d00001e028fc6f1abf8de8126f3d46f30",
+    }
   ];
 
   const Brand_PR_campaigns = [
