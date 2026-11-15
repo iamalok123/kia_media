@@ -17,9 +17,9 @@ const Hero = () => {
       {/* Decorative background gradient orbs — replaces external image dependency */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-b from-purple-950/60 via-black/80 to-black" />
-        <div className="absolute -top-40 left-1/4 w-[500px] h-[500px] bg-purple-700/25 rounded-full blur-[120px]" />
-        <div className="absolute top-1/3 -right-20 w-[400px] h-[400px] bg-fuchsia-600/20 rounded-full blur-[100px]" />
-        <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-purple-900/30 rounded-full blur-[90px]" />
+        <div className="absolute -top-40 left-1/4 w-125 h-125 bg-purple-700/25 rounded-full blur-[120px]" />
+        <div className="absolute top-1/3 -right-20 w-100 h-100 bg-fuchsia-600/20 rounded-full blur-[100px]" />
+        <div className="absolute bottom-0 left-0 w-87.5 h-87.5 bg-purple-900/30 rounded-full blur-[90px]" />
       </div>
       <div className="absolute inset-0 z-0 bg-linear-to-b from-black/30 via-purple-950/20 to-black" />
 

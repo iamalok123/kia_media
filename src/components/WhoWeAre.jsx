@@ -21,10 +21,10 @@ const WhoWeAre = () => {
   ];
 
   const partnerLogos = [
-    { id: 1, name: 'Microsoft', src: 'https://archive.siasat.com/wp-content/uploads/2022/09/vxvagvw.jpg' },
-    { id: 2, name: 'Framer', src: 'https://i.ytimg.com/vi/ZMak63mHq5Y/maxresdefault.jpg' },
-    { id: 3, name: 'Instagram', src: 'https://media.licdn.com/dms/image/sync/v2/D4D27AQFYk6fE7vdnbA/articleshare-shrink_800/B4DZktDNwxJIAI-/0/1757397442291?e=2147483647&v=beta&t=Y3vkwNswykmzWMa8g7bYNdgnSAMY-otpILwxzBXtMpc' },
-    { id: 4, name: 'HUAWEI', src: 'https://m.media-amazon.com/images/G/01/primevideo/seo/primevideo-seo-logo.png' },
+    { id: 1, name: 'Microsoft', src: 'https://imgs.search.brave.com/cVnPUPi4xPUmW3K3cvsfK-3IabseqzLEbX4f3OgGB-0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9yYWJi/aXRsb2dvLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyNi8w/MS9taWNyb3NvZnQt/MS5qcGc' },
+    { id: 2, name: 'Netflix', src: 'https://i.ytimg.com/vi/ZMak63mHq5Y/maxresdefault.jpg' },
+    { id: 3, name: 'Instagram', src: 'https://imgs.search.brave.com/XzjLjFYkYl3HGwLBPJHiYeguF2zBCVERQbYeTTAEb_E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzEyLzI4/LzA2LzEyMjgwNjk2/NmExNWMwZTFkNTIz/MmNlNWM1NWIxZmQ1/LmpwZw' },
+    { id: 4, name: 'Amazon Prime', src: 'https://m.media-amazon.com/images/G/01/primevideo/seo/primevideo-seo-logo.png' },
     { id: 5, name: 'Walmart', src: 'https://etimg.etb2bimg.com/photo/118235487.cms' },
   ];
 
