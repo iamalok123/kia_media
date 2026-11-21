@@ -21,11 +21,11 @@ const WhoWeAre = () => {
   ];
 
   const partnerLogos = [
-    { id: 1, name: 'Microsoft', src: 'https://imgs.search.brave.com/cVnPUPi4xPUmW3K3cvsfK-3IabseqzLEbX4f3OgGB-0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9yYWJi/aXRsb2dvLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyNi8w/MS9taWNyb3NvZnQt/MS5qcGc' },
+    { id: 1, name: 'DashVerse', src: 'https://imgs.search.brave.com/YH6ZVYGh4n3hH1qnmCMRWdiLnsuVq327TffMvtPnmQQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cHJvZC53ZWJzaXRl/LWZpbGVzLmNvbS82/NmIyMTc1NWI2MTAw/MjYxMTlmYzZmYmQv/NmEzNGU2ZGRlZWIz/MTQzY2E1YzBiNWE2/X0Rhc2h2ZXJzZS1s/b2dvLndlYnA' },
     { id: 2, name: 'Netflix', src: 'https://i.ytimg.com/vi/ZMak63mHq5Y/maxresdefault.jpg' },
-    { id: 3, name: 'Instagram', src: 'https://imgs.search.brave.com/XzjLjFYkYl3HGwLBPJHiYeguF2zBCVERQbYeTTAEb_E/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzEyLzI4/LzA2LzEyMjgwNjk2/NmExNWMwZTFkNTIz/MmNlNWM1NWIxZmQ1/LmpwZw' },
+    { id: 3, name: 'hitv', src: 'assets/hitvicon.png' },
     { id: 4, name: 'Amazon Prime', src: 'https://m.media-amazon.com/images/G/01/primevideo/seo/primevideo-seo-logo.png' },
-    { id: 5, name: 'Walmart', src: 'https://etimg.etb2bimg.com/photo/118235487.cms' },
+    { id: 5, name: 'Hotstar', src: 'https://etimg.etb2bimg.com/photo/118235487.cms' },
   ];
 
   return (
@@ -53,57 +53,20 @@ const WhoWeAre = () => {
           >
             {/* Scrolling track — doubled for seamless loop */}
             <div className="animate-marquee" style={{ gap: '2rem', animationDuration: '18s' }}>
-              {[...partnerLogos, ...partnerLogos].map((logo, index) => {
-                const accentIndex = index % 5;
-                const gradients = [
-                  'linear-gradient(135deg, #a855f7, #ec4899)',
-                  'linear-gradient(135deg, #06b6d4, #6366f1)',
-                  'linear-gradient(135deg, #f59e0b, #ef4444)',
-                  'linear-gradient(135deg, #10b981, #3b82f6)',
-                  'linear-gradient(135deg, #8b5cf6, #f43f5e)',
-                ];
-                const radials = [
-                  'radial-gradient(circle at center, #a855f7 0%, transparent 70%)',
-                  'radial-gradient(circle at center, #06b6d4 0%, transparent 70%)',
-                  'radial-gradient(circle at center, #f59e0b 0%, transparent 70%)',
-                  'radial-gradient(circle at center, #10b981 0%, transparent 70%)',
-                  'radial-gradient(circle at center, #8b5cf6 0%, transparent 70%)',
-                ];
-                return (
-                  <div
-                    key={`${logo.id}-${index}`}
-                    className="group relative rounded-2xl overflow-hidden cursor-pointer shrink-0"
-                    style={{ width: '200px', height: '150px' }}
-                  >
-                    {/* Gradient border glow */}
-                    <div
-                      className="absolute inset-0 rounded-2xl z-0"
-                      style={{ background: gradients[accentIndex], padding: '1.5px' }}
-                    >
-                      <div className="w-full h-full rounded-2xl bg-[#0d0d0d]" />
-                    </div>
-
-                    {/* Image area */}
-                    <div className="absolute inset-[1.5px] rounded-2xl overflow-hidden z-10 flex items-center justify-center bg-[#111118]">
-                      {/* Radial glow backdrop */}
-                      <div
-                        className="absolute inset-0 opacity-25"
-                        style={{ background: radials[accentIndex] }}
-                      />
-                      <img
-                        src={logo.src}
-                        alt={logo.name}
-                        className="relative z-10 w-[85%] h-[75%] object-contain transition-transform duration-500 group-hover:scale-110 drop-shadow-xl"
-                      />
-                      {/* Colour shimmer on hover */}
-                      <div
-                        className="absolute inset-0 opacity-0 group-hover:opacity-15 transition-opacity duration-400"
-                        style={{ background: gradients[accentIndex] }}
-                      />
-                    </div>
-                  </div>
-                );
-              })}
+              {[...partnerLogos, ...partnerLogos].map((logo, index) => (
+                <div
+                  key={`${logo.id}-${index}`}
+                  className="relative rounded-2xl overflow-hidden shrink-0 bg-[#0d0d12] flex items-center justify-center shadow-md shadow-black/50"
+                  style={{ width: '220px', height: '95px' }}
+                >
+                  <img
+                    src={logo.src}
+                    alt={logo.name}
+                    className="w-full h-full object-cover rounded-2xl pointer-events-none select-none"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </motion.div>
