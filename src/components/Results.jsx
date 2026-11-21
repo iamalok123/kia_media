@@ -206,8 +206,78 @@ const Results = () => {
       campaignSize: "Small",
       platform: "Instagram",
       image: "https://i.scdn.co/image/ab67616d00001e028fc6f1abf8de8126f3d46f30",
-    }
+    },
+
+
+    {
+      name: 'You Make It Easy',
+      number: '2x',
+      reach: '10M+',
+      deliverables: '120+',
+      campaignSize: 'Medium',
+      platform: "Instagram",
+      image: 'https://imgs.search.brave.com/b69df4K9fFB3-4zdcYSsOHnnuHahm2BUvl-xLWy75hw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS9q/TENIcFo2QjFnVS9t/YXhyZXNkZWZhdWx0/LmpwZw',
+    },
+    {
+      name: '444 Song',
+      reach: '1M',
+      deliverables: '15',
+      campaignSize: 'Mini',
+      platform: "Instagram",
+      image: 'https://imgs.search.brave.com/pTSxizIr4J1wPMv4scpq9lkC0DXAHyK8kJ36UO3lZ1w/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hMTAu/Z2FhbmFjZG4uY29t/L2duX2ltZy9hbGJ1/bXMvRHdQS09rQktx/Vi9QS09rNHFlcUtx/L3NpemVfbS5qcGc',
+    },
+    {
+      name: 'Jaadu Teri Nazar',
+      number: '2x',
+      reach: '10M+',
+      deliverables: '100+',
+      campaignSize: 'Medium',
+      platform: "Instagram",
+      image: 'https://imgs.search.brave.com/Porga6iBbggQuMfy4lNC4j0vxfH26qGdHI6-A3KqyEM/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vbHlyaWNz/Z2VtLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMi8wNy9K/YWFkdS1UZXJpLU5h/emFyLUx5cmljcy5q/cGc_Zml0PTEzMDAs/ODAwJnNzbD0x',
+    },
+    {
+      name: 'Bayaan',
+      reach: '5M+',
+      deliverables: '70',
+      campaignSize: 'Medium',
+      platform: "Instagram",
+      image: 'https://imgs.search.brave.com/p94evszFYv9jVsP4lgayK8Rn5pTHjUPAbZE8rQ-wlfk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnNj/ZG4uY28vaW1hZ2Uv/YWI2NzYxNjEwMDAw/NTE3NGRhMDQ3NGFl/MDFkMzQ1NGI2ZjVk/ODE2Yg',
+    },
+    {
+      name: 'Zara Zara',
+      reach: '5M+',
+      deliverables: '50+',
+      campaignSize: 'Medium',
+      platform: "Instagram",
+      image: 'https://imgs.search.brave.com/LB8ERrSw8SRLv_pdAtS2NgkFmCtVjNABJxMZUIXYKys/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zLnNh/cmVnYW1hLnRlY2gv/aW1hZ2UvYy9md180/ODUvOS8xZC9jZC96/YXJhLXphcmFfMTQ0/MHgxNDQwXzE3MTc3/MzY5MjUuanBn',
+    },
+    {
+      name: 'Naal Naal Ve',
+      reach: '5M+',
+      deliverables: '50+',
+      campaignSize: 'Medium',
+      platform: "Instagram",
+      image: 'https://imgs.search.brave.com/eWiEY7MALMw6bMTejqp0kXF-N9Bu7Y9UDQuV-kj1khE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9scS5k/ampvaGFsLmNvbS9j/b3ZlcnNfd2VicC83/Mzc5MDkvTmFhbCUy/ME5hYWwlMjBWZS53/ZWJw',
+    },
+    {
+      name: 'Jealous',
+      reach: '3M+',
+      deliverables: '50+',
+      campaignSize: 'Medium',
+      platform: "Instagram",
+      image: 'https://imgs.search.brave.com/C8NhRkVGKeGhMyA1d1Nl68b_LO55Y_Y5qj-fnreSVHM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hMTAu/Z2FhbmFjZG4uY29t/L2duX2ltZy9hbGJ1/bXMvN3JWVzFSYms1/Ni9yVlcxRUQwbVdr/L3NpemVfbS5qcGc',
+    },
+    {
+      name: 'Diruba - Rito Riba ',
+      reach: '3M+',
+      deliverables: '50+',
+      campaignSize: 'Medium',
+      platform: "Instagram",
+      image: 'https://imgs.search.brave.com/AvOiiO5b1wEAV9eyfysUc9zsOEnjwSh8ZRZgjDZgZwk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pczEt/c3NsLm16c3RhdGlj/LmNvbS9pbWFnZS90/aHVtYi9NdXNpYzIy/MS92NC9hNS82MS85/Yy9hNTYxOWNlMS04/MDRlLWYwOTktMjZk/MC00M2RmNDc3ZmYz/NzgvODIzMzc1NTEz/MzQ2X0NvdmVyLmpw/Zy80MDB4NDAwYmIu/d2VicA',
+    },
   ];
+
+
 
   const Brand_PR_campaigns = [
     {
@@ -230,6 +300,34 @@ const Results = () => {
       deliverables: '20',
       campain_size: 'Mini',
       image: 'https://nonno.hpplus.jp/wp-content/uploads/org/aa/aa57405681c1d65598ed6f04cfee7036_1080x1383_h.jpg',
+    },
+    {
+      name: 'Zhang Linghe',
+      organic_reach: '1M',
+      deliverables: '20+',
+      campain_size: 'Mini',
+      image: 'https://imgs.search.brave.com/ilpON7xzOPb3Y51HJUK8iBt0UjHzKR9IhxHMthDASg8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aS1zY21wLmNvbS9z/aXRlcy9kZWZhdWx0/L2ZpbGVzL3N0eWxl/cy8xMDIweDY4MC9w/dWJsaWMvZDgvaW1h/Z2VzL2NhbnZhcy8y/MDI2LzExLzE3Lzc0/Mjk4Njk5LTgwNTYt/NDUzNS05ZjEzLWNl/YjFkMWRiMjUwY185/ODhlMmNlNS5qcGc_/aXRvaz1rX0tvYjN6/eCZ2PTE3OTQ4ODU2/MjE',
+    },
+    {
+      name: 'Bhootu Aaya Bhago',
+      organic_reach: '2M+',
+      deliverables: '50+',
+      campain_size: 'Medium',
+      image: 'https://imgs.search.brave.com/IqKgZaJ6puB5SW4WRXtpeXiuhntXcJH-HHJ_fXgVUsc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWdz/LmV0dmJoYXJhdC5j/b20vZXR2YmhhcmF0/L3Byb2QtaW1hZ2Vz/LzA1LTA4LTIwMjYv/MTIwMC02NzUtMjcz/MTU1OTQtdGh1bWJu/YWlsLTE2eDktYWFh/LmpwZw',
+    },
+    {
+      name: 'Netflix x K-PoP',
+      organic_reach: '5M+',
+      deliverables: '50+',
+      campain_size: 'Medium',
+      image: 'assets/netflixxkpop.jpg',
+    },
+    {
+      name: 'Weverse Con Festival',
+      organic_reach: '15M+',
+      deliverables: '800+',
+      campain_size: 'Medium',
+      image: 'https://imgs.search.brave.com/JAzOkKO6E0cd3UPmOxNKo3Fpat83PX5DD-PHtmHmcFo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/aHliZS1hbm5vdW5j/ZXMtd2V2ZXJzZS1j/b24tZmVzdGl2YWwt/aW5kaWEtY29taW5n/LXRvLW5ldy12MC05/M2F6eW9qZDMydWgx/LmpwZWc_d2lkdGg9/NjQwJmNyb3A9c21h/cnQmYXV0bz13ZWJw/JnM9M2ZlNjVkM2M4/OGJlN2Y3ODBkN2Q4/ZjMyYWJiNzdlYzgw/MjcwMjYwYw',
     },
   ]
 
@@ -261,8 +359,17 @@ const Results = () => {
       deliverables: "200+",
       campain_size: "Medium",
       image: "app&ott/spring_fever.png",
-    }
+    },
+    {
+      name: "OTTAsia",
+      organic_reach: "10M+",
+      deliverables: "100+",
+      campain_size: "Medium",
+      image: "https://imgs.search.brave.com/pXRy_FSGMhZ61AXsX68zzE5n8zb1praQ31LCbw7B6zI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFuTWx1QTlyTUwu/cG5n",
+    },
   ];
+
+
 
   const brandCampains = [
     {
@@ -281,6 +388,8 @@ const Results = () => {
     },
   ];
 
+
+  
   return (
     <section className="py-20 bg-linear-to-b from-black via-purple-950/30 to-black" id="campaigns" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -338,9 +447,16 @@ const Results = () => {
                   {/* Content below image */}
                   <div className="p-5 sm:p-6 flex flex-col h-50 justify-between">
                     <div>
-                      <h4 className="text-xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-fuchsia-400 group-hover:to-pink-400 transition-all duration-300">
-                        {campaign.name}
-                      </h4>
+                      <div className="flex items-start justify-between gap-2 mb-3">
+                        <h4 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-fuchsia-400 group-hover:to-pink-400 transition-all duration-300">
+                          {campaign.name}
+                        </h4>
+                        {campaign.number && (
+                          <span className="shrink-0 text-xs font-bold text-fuchsia-400 bg-fuchsia-500/15 border border-fuchsia-500/30 px-2.5 py-0.5 rounded-full shadow-[0_0_10px_rgba(217,70,239,0.2)]">
+                            {campaign.number}
+                          </span>
+                        )}
+                      </div>
 
                       <div className="flex items-center justify-between">
                         <div>
@@ -394,9 +510,16 @@ const Results = () => {
 
                   <div className="p-5 sm:p-6 flex flex-col h-50 justify-between">
                     <div>
-                      <h4 className="text-xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-fuchsia-400 group-hover:to-pink-400 transition-all duration-300">
-                        {campaign.name}
-                      </h4>
+                      <div className="flex items-start justify-between gap-2 mb-3">
+                        <h4 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-fuchsia-400 group-hover:to-pink-400 transition-all duration-300">
+                          {campaign.name}
+                        </h4>
+                        {campaign.number && (
+                          <span className="shrink-0 text-xs font-bold text-fuchsia-400 bg-fuchsia-500/15 border border-fuchsia-500/30 px-2.5 py-0.5 rounded-full shadow-[0_0_10px_rgba(217,70,239,0.2)]">
+                            {campaign.number}
+                          </span>
+                        )}
+                      </div>
 
                       <div className="flex items-center justify-between">
                         <div>
