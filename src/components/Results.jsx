@@ -264,7 +264,7 @@ const Results = () => {
       deliverables: '50+',
       campaignSize: 'Medium',
       platform: "Instagram",
-      image: 'assets/jealous.jpeg',
+      image: 'assets/Jealous.jpeg',
     },
     {
       name: 'Diruba - Rito Riba ',
@@ -302,7 +302,7 @@ const Results = () => {
     },
     {
       name: 'Zhang Linghe',
-      organic_reach: '1M',
+      organic_reach: 'Awareness',
       deliverables: '20+',
       campain_size: 'Mini',
       image: 'https://imgs.search.brave.com/ilpON7xzOPb3Y51HJUK8iBt0UjHzKR9IhxHMthDASg8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aS1zY21wLmNvbS9z/aXRlcy9kZWZhdWx0/L2ZpbGVzL3N0eWxl/cy8xMDIweDY4MC9w/dWJsaWMvZDgvaW1h/Z2VzL2NhbnZhcy8y/MDI2LzExLzE3Lzc0/Mjk4Njk5LTgwNTYt/NDUzNS05ZjEzLWNl/YjFkMWRiMjUwY185/ODhlMmNlNS5qcGc_/aXRvaz1rX0tvYjN6/eCZ2PTE3OTQ4ODU2/MjE',
@@ -315,16 +315,16 @@ const Results = () => {
       image: 'https://imgs.search.brave.com/IqKgZaJ6puB5SW4WRXtpeXiuhntXcJH-HHJ_fXgVUsc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWdz/LmV0dmJoYXJhdC5j/b20vZXR2YmhhcmF0/L3Byb2QtaW1hZ2Vz/LzA1LTA4LTIwMjYv/MTIwMC02NzUtMjcz/MTU1OTQtdGh1bWJu/YWlsLTE2eDktYWFh/LmpwZw',
     },
     {
-      name: 'Netflix x K-PoP',
-      organic_reach: '5M+',
-      deliverables: '50+',
+      name: 'Netflix x K Drama',
+      organic_reach: 'Awareness',
+      deliverables: '50',
       campain_size: 'Medium',
       image: 'assets/netflixxkpop.jpg',
     },
     {
       name: 'Weverse Con Festival',
-      organic_reach: '15M+',
-      deliverables: '800+',
+      organic_reach: 'Awareness',
+      deliverables: '80+',
       campain_size: 'Medium',
       image: 'https://imgs.search.brave.com/JAzOkKO6E0cd3UPmOxNKo3Fpat83PX5DD-PHtmHmcFo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/aHliZS1hbm5vdW5j/ZXMtd2V2ZXJzZS1j/b24tZmVzdGl2YWwt/aW5kaWEtY29taW5n/LXRvLW5ldy12MC05/M2F6eW9qZDMydWgx/LmpwZWc_d2lkdGg9/NjQwJmNyb3A9c21h/cnQmYXV0bz13ZWJw/JnM9M2ZlNjVkM2M4/OGJlN2Y3ODBkN2Q4/ZjMyYWJiNzdlYzgw/MjcwMjYwYw',
     },
@@ -366,26 +366,23 @@ const Results = () => {
       campain_size: "Medium",
       image: "https://imgs.search.brave.com/pXRy_FSGMhZ61AXsX68zzE5n8zb1praQ31LCbw7B6zI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFuTWx1QTlyTUwu/cG5n",
     },
-  ];
 
-
-
-  const brandCampains = [
     {
       name: 'HiTv App',
-      description: 'Campaign across multiple pages',
-      engagement: '100M+',
-      metric: 'Monthly Reach',
-      image: 'assets/hitv.png',
+      organic_reach: "100M+",
+      deliverables: "200+",
+      campain_size: "Medium",
+      image: 'https://imgs.search.brave.com/77aP9gZ51qGuSgKWQ15BLkAnSf9t7YJhyAjfqcNGazQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/YXB0b2lkZS5jb20v/aW1ncy9hLzkvZC9h/OWQ2NmYxMDY3Zjlk/ZGZjN2NmNmMzNTYx/YTVmZGQ3MV9pY29u/LnBuZw',
     },
     {
       name: 'Boo App',
-      description: 'Performance marketing',
-      engagement: '250+',
-      metric: 'Pages Working',
-      image: 'assets/boo app.jpg',
+      organic_reach: "10M+",
+      deliverables: "200+",
+      campain_size: "Medium",
+      image: 'assets/booapp.jpeg',
     },
   ];
+
 
 
   
@@ -674,66 +671,6 @@ const Results = () => {
                         <div className="text-lg font-bold text-white">{campaign.deliverables}</div>
                       </div>
                       <div className="text-xs text-gray-400 uppercase tracking-wider">Deliverables</div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Brand Campaigns - Revamped Premium UI */}
-        <div>
-          <motion.h3
-            className="text-xl font-bold text-white mb-6 border-l-4 border-purple-500 pl-4"
-            initial={{ opacity: 0, x: -20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            Major Brand Campaigns
-          </motion.h3>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {brandCampains.map((campaign, index) => (
-              <motion.div
-                key={campaign.name}
-                className="group relative rounded-3xl overflow-hidden bg-purple-950/40 border border-purple-800/50 hover:border-fuchsia-500/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(209,37,244,0.15)]"
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-              >
-                <div className="flex flex-col sm:flex-row h-full">
-                  {/* Image Section */}
-                  <div className="relative w-full sm:w-1/2 h-64 sm:h-auto overflow-hidden">
-                    <img
-                      src={campaign.image}
-                      alt={`${campaign.name} campaign`}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      loading="lazy"
-                    />
-                    {/* Dark gradient fade into content */}
-                    <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent sm:bg-linear-to-l sm:from-black/80 sm:to-transparent" />
-                  </div>
-                  
-                  {/* Content Section */}
-                  <div className="relative w-full sm:w-1/2 p-6 sm:p-8 flex flex-col justify-center bg-linear-to-br from-black/80 to-purple-950/80 backdrop-blur-xl">
-                    <h4 className="text-3xl font-black text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-fuchsia-400 group-hover:to-pink-400 transition-all duration-300">
-                      {campaign.name}
-                    </h4>
-                    <p className="text-gray-400 mb-8 text-base">
-                      {campaign.description}
-                    </p>
-                    
-                    <div className="bg-purple-900/40 rounded-2xl p-5 border border-purple-700/30 group-hover:border-purple-500/50 transition-colors duration-300">
-                      <div className="flex items-center gap-3 mb-1">
-                        <Users className="w-5 h-5 text-fuchsia-500" />
-                        <div className="text-3xl font-black text-fuchsia-500">
-                          {campaign.engagement}
-                        </div>
-                      </div>
-                      <div className="text-xs text-gray-300 uppercase tracking-widest font-semibold ml-8">
-                        {campaign.metric}
-                      </div>
                     </div>
                   </div>
                 </div>

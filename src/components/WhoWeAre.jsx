@@ -21,11 +21,11 @@ const WhoWeAre = () => {
   ];
 
   const partnerLogos = [
-    { id: 1, name: 'DashVerse', src: 'https://imgs.search.brave.com/YH6ZVYGh4n3hH1qnmCMRWdiLnsuVq327TffMvtPnmQQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cHJvZC53ZWJzaXRl/LWZpbGVzLmNvbS82/NmIyMTc1NWI2MTAw/MjYxMTlmYzZmYmQv/NmEzNGU2ZGRlZWIz/MTQzY2E1YzBiNWE2/X0Rhc2h2ZXJzZS1s/b2dvLndlYnA' },
-    { id: 2, name: 'Netflix', src: 'https://i.ytimg.com/vi/ZMak63mHq5Y/maxresdefault.jpg' },
-    { id: 3, name: 'hitv', src: 'assets/hitvicon.png' },
-    { id: 4, name: 'Amazon Prime', src: 'https://m.media-amazon.com/images/G/01/primevideo/seo/primevideo-seo-logo.png' },
-    { id: 5, name: 'Hotstar', src: 'https://etimg.etb2bimg.com/photo/118235487.cms' },
+    { id: 1, name: 'Netflix', src: 'https://i.ytimg.com/vi/ZMak63mHq5Y/maxresdefault.jpg', fit: 'cover' },
+    { id: 2, name: 'hitv', src: 'assets/hitvicon.png', fit: 'contain', padding: 'p-2' },
+    { id: 3, name: 'Amazon Prime', src: 'assets/primevideo.png', fit: 'contain', padding: 'p-2.5' },
+    { id: 4, name: 'Hotstar', src: 'assets/jiohotstar.png', fit: 'contain', padding: 'p-2.5' },
+    { id: 5, name: 'DashVerse', src: 'assets/dashverse.png', fit: 'contain', padding: 'p-3.5' },
   ];
 
   return (
@@ -59,12 +59,23 @@ const WhoWeAre = () => {
                   className="relative rounded-2xl overflow-hidden shrink-0 bg-[#0d0d12] flex items-center justify-center shadow-md shadow-black/50"
                   style={{ width: '220px', height: '95px' }}
                 >
-                  <img
-                    src={logo.src}
-                    alt={logo.name}
-                    className="w-full h-full object-cover rounded-2xl pointer-events-none select-none"
-                    loading="lazy"
-                  />
+                  {logo.fit === 'contain' ? (
+                    <div className={`w-full h-full ${logo.padding || 'p-2.5'} flex items-center justify-center overflow-hidden`}>
+                      <img
+                        src={logo.src}
+                        alt={logo.name}
+                        className="max-w-full max-h-full object-contain rounded-xl pointer-events-none select-none"
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : (
+                    <img
+                      src={logo.src}
+                      alt={logo.name}
+                      className="w-full h-full object-cover rounded-2xl pointer-events-none select-none"
+                      loading="lazy"
+                    />
+                  )}
                 </div>
               ))}
             </div>
