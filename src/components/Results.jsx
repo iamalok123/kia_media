@@ -1,7 +1,216 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion, useInView } from 'framer-motion';
 import { TrendingUp, Users, Calendar, Instagram } from 'lucide-react';
+
+const InteractiveMusicMarquee = ({ campaigns, isInView }) => {
+  const marqueeRef = useRef(null);
+  const isHovered = useRef(false);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const startScrollLeft = useRef(0);
+  const oneSetWidthRef = useRef(0);
+
+  useEffect(() => {
+    const container = marqueeRef.current;
+    if (!container) return;
+
+    const updateWidth = () => {
+      if (marqueeRef.current) {
+        const setWidth = marqueeRef.current.scrollWidth / 3;
+        if (setWidth > 0) {
+          oneSetWidthRef.current = setWidth;
+          if (marqueeRef.current.scrollLeft === 0) {
+            marqueeRef.current.scrollLeft = setWidth;
+          }
+        }
+      }
+    };
+
+    updateWidth();
+
+    const resizeObserver = new ResizeObserver(updateWidth);
+    resizeObserver.observe(container);
+
+    let animationFrameId;
+    let lastTime = performance.now();
+
+    const animate = (currentTime) => {
+      const dt = (currentTime - lastTime) / 1000;
+      lastTime = currentTime;
+
+      if (!isHovered.current && !isDragging.current && marqueeRef.current && oneSetWidthRef.current > 0) {
+        // Continuous smooth marquee movement matching ~90s duration per set
+        const speed = oneSetWidthRef.current / 90;
+        marqueeRef.current.scrollLeft += speed * dt;
+
+        // Wrap around seamlessly in both directions
+        if (marqueeRef.current.scrollLeft >= 2 * oneSetWidthRef.current) {
+          marqueeRef.current.scrollLeft -= oneSetWidthRef.current;
+        } else if (marqueeRef.current.scrollLeft <= 0.2 * oneSetWidthRef.current) {
+          marqueeRef.current.scrollLeft += oneSetWidthRef.current;
+        }
+      }
+
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animationFrameId = requestAnimationFrame(animate);
+
+    // Manual wheel scrolling (horizontal & vertical trackpad/wheel)
+    const handleWheel = (e) => {
+      if (!marqueeRef.current || oneSetWidthRef.current <= 0) return;
+      const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+      if (delta !== 0) {
+        e.preventDefault();
+        // Move according to user scroll speed
+        marqueeRef.current.scrollLeft += delta * 1.25;
+
+        // Seamless wrap in both directions
+        if (marqueeRef.current.scrollLeft >= 2 * oneSetWidthRef.current) {
+          marqueeRef.current.scrollLeft -= oneSetWidthRef.current;
+        } else if (marqueeRef.current.scrollLeft <= 0.2 * oneSetWidthRef.current) {
+          marqueeRef.current.scrollLeft += oneSetWidthRef.current;
+        }
+      }
+    };
+
+    // Manual drag-to-scroll
+    const handleMouseDown = (e) => {
+      isDragging.current = true;
+      startX.current = e.pageX - container.offsetLeft;
+      startScrollLeft.current = container.scrollLeft;
+    };
+
+    const handleMouseMove = (e) => {
+      if (!isDragging.current || !marqueeRef.current) return;
+      e.preventDefault();
+      const x = e.pageX - container.offsetLeft;
+      const walk = (x - startX.current) * 1.3;
+      marqueeRef.current.scrollLeft = startScrollLeft.current - walk;
+
+      if (oneSetWidthRef.current > 0) {
+        if (marqueeRef.current.scrollLeft >= 2 * oneSetWidthRef.current) {
+          marqueeRef.current.scrollLeft -= oneSetWidthRef.current;
+        } else if (marqueeRef.current.scrollLeft <= 0.2 * oneSetWidthRef.current) {
+          marqueeRef.current.scrollLeft += oneSetWidthRef.current;
+        }
+      }
+    };
+
+    const handleMouseUp = () => {
+      isDragging.current = false;
+    };
+
+    container.addEventListener('wheel', handleWheel, { passive: false });
+    container.addEventListener('mousedown', handleMouseDown);
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseup', handleMouseUp);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      resizeObserver.disconnect();
+      container.removeEventListener('wheel', handleWheel);
+      container.removeEventListener('mousedown', handleMouseDown);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, []);
+
+  const renderCard = (campaign, key, index) => (
+    <motion.div
+      key={key}
+      className="group relative shrink-0 w-75 sm:w-87.5 bg-purple-900/40 backdrop-blur-sm border border-purple-800/50 rounded-2xl overflow-hidden cursor-pointer hover:border-fuchsia-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-fuchsia-500/20"
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{ duration: 0.5, delay: 0.3 + (index % 10) * 0.05 }}
+      whileHover={{ y: -8 }}
+    >
+      {/* Image */}
+      <div className="relative h-50 sm:h-60 overflow-hidden">
+        <img
+          src={campaign.image}
+          alt={campaign.name}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+        />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
+
+        {/* Top badge */}
+        <div className="absolute top-4 right-4 bg-purple-500/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1.5">
+          <Instagram className="w-3.5 h-3.5 text-white" />
+          <span className="text-xs font-bold text-white">{campaign.platform}</span>
+        </div>
+      </div>
+
+      {/* Content below image */}
+      <div className="p-5 sm:p-6 flex flex-col h-50 justify-between">
+        <div>
+          <div className="flex items-start justify-between gap-2 mb-3">
+            <h4 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-fuchsia-400 group-hover:to-pink-400 transition-all duration-300">
+              {campaign.name}
+            </h4>
+            {campaign.number && (
+              <span className="shrink-0 text-xs font-bold text-fuchsia-400 bg-fuchsia-500/15 border border-fuchsia-500/30 px-2.5 py-0.5 rounded-full shadow-[0_0_10px_rgba(217,70,239,0.2)]">
+                {campaign.number}
+              </span>
+            )}
+          </div>
+
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="flex items-center gap-1.5 mb-1">
+                <TrendingUp className="w-4 h-4 text-fuchsia-400" />
+                <div className="text-sm font-semibold text-white">{campaign.reach}</div>
+              </div>
+              <div className="text-xs text-gray-400 uppercase tracking-wide">Reach</div>
+            </div>
+
+            <div className="text-right">
+              <div className="flex items-center justify-end gap-1.5 mb-1">
+                <Users className="w-4 h-4 text-purple-400" />
+                <div className="text-sm font-semibold text-white">{campaign.deliverables}</div>
+              </div>
+              <div className="text-xs text-gray-400 uppercase tracking-wide">Deliverables</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-4 pt-4 border-t border-purple-800/50 flex justify-between items-center">
+          <span className="text-sm text-gray-300 uppercase tracking-wide font-medium">Campaign Size</span>
+          <span className="text-sm font-bold text-fuchsia-400 bg-fuchsia-500/10 px-3 py-1.5 rounded-lg border border-fuchsia-500/20">
+            {campaign.campaignSize || 'Medium'}
+          </span>
+        </div>
+      </div>
+    </motion.div>
+  );
+
+  return (
+    <div
+      ref={marqueeRef}
+      className="relative overflow-x-auto select-none py-4 cursor-grab active:cursor-grabbing [&::-webkit-scrollbar]:hidden"
+      style={{
+        scrollbarWidth: 'none',
+        msOverflowStyle: 'none',
+      }}
+      onMouseEnter={() => {
+        isHovered.current = true;
+      }}
+      onMouseLeave={() => {
+        isHovered.current = false;
+        isDragging.current = false;
+      }}
+    >
+      <div className="flex whitespace-nowrap gap-6 w-max">
+        {campaigns.map((campaign, index) => renderCard(campaign, `set1-${index}`, index))}
+        {campaigns.map((campaign, index) => renderCard(campaign, `set2-${index}`, index))}
+        {campaigns.map((campaign, index) => renderCard(campaign, `set3-${index}`, index))}
+      </div>
+    </div>
+  );
+};
 
 const Results = () => {
   const ref = useRef(null);
@@ -147,7 +356,7 @@ const Results = () => {
       deliverables: 65,
       campaignSize: "Medium",
       platform: "Instagram",
-      image: "https://i.ytimg.com/vi/VoN5Y5PTNsY/maxresdefault.jpg",
+      image: "assets/ricorico.jpeg",
     },
     {
       name: "Starboy",
@@ -166,12 +375,12 @@ const Results = () => {
       image: "https://i.scdn.co/image/ab67616d0000b273dc8799fc0000992578ec96e9",
     },
     {
-      name: "Harleys in Hawai",
+      name: "Harleys in Hawah",
       reach: "25M",
       deliverables: 80,
       campaignSize: "Medium",
       platform: "Instagram",
-      image:"assets/harleys.png"
+      image:"assets/hawah.jpeg"
     },
     {
       name: "Inaam",
@@ -319,7 +528,7 @@ const Results = () => {
       organic_reach: 'Awareness',
       deliverables: '50',
       campain_size: 'Medium',
-      image: 'assets/netflixxkpop.jpg',
+      image: 'assets/netflix.jpeg',
     },
     {
       name: 'Weverse Con Festival',
@@ -410,143 +619,7 @@ const Results = () => {
             Music Campaign Highlights
           </motion.h3>
 
-          <div className="relative overflow-hidden">
-            <div className="flex animate-marquee whitespace-nowrap gap-6" style={{ animationDuration: '90s' }}>
-              {/* First set of cards */}
-              {musicCampaigns.map((campaign, index) => (
-                <motion.div
-                  key={index}
-                  className="group relative shrink-0 w-75 sm:w-87.5 bg-purple-900/40 backdrop-blur-sm border border-purple-800/50 rounded-2xl overflow-hidden cursor-pointer hover:border-fuchsia-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-fuchsia-500/20"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                  transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                  whileHover={{ y: -8 }}
-                >
-                  {/* Image */}
-                  <div className="relative h-50 sm:h-60 overflow-hidden">
-                    <img
-                      src={campaign.image}
-                      alt={campaign.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
-
-                    {/* Top badge */}
-                    <div className="absolute top-4 right-4 bg-purple-500/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1.5">
-                      <Instagram className="w-3.5 h-3.5 text-white" />
-                      <span className="text-xs font-bold text-white">{campaign.platform}</span>
-                    </div>
-                  </div>
-
-                  {/* Content below image */}
-                  <div className="p-5 sm:p-6 flex flex-col h-50 justify-between">
-                    <div>
-                      <div className="flex items-start justify-between gap-2 mb-3">
-                        <h4 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-fuchsia-400 group-hover:to-pink-400 transition-all duration-300">
-                          {campaign.name}
-                        </h4>
-                        {campaign.number && (
-                          <span className="shrink-0 text-xs font-bold text-fuchsia-400 bg-fuchsia-500/15 border border-fuchsia-500/30 px-2.5 py-0.5 rounded-full shadow-[0_0_10px_rgba(217,70,239,0.2)]">
-                            {campaign.number}
-                          </span>
-                        )}
-                      </div>
-
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <div className="flex items-center gap-1.5 mb-1">
-                            <TrendingUp className="w-4 h-4 text-fuchsia-400" />
-                            <div className="text-sm font-semibold text-white">{campaign.reach}</div>
-                          </div>
-                          <div className="text-xs text-gray-400 uppercase tracking-wide">Reach</div>
-                        </div>
-
-                        <div className="text-right">
-                          <div className="flex items-center justify-end gap-1.5 mb-1">
-                            <Users className="w-4 h-4 text-purple-400" />
-                            <div className="text-sm font-semibold text-white">{campaign.deliverables}</div>
-                          </div>
-                          <div className="text-xs text-gray-400 uppercase tracking-wide">Deliverables</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mt-4 pt-4 border-t border-purple-800/50 flex justify-between items-center">
-                      <span className="text-sm text-gray-300 uppercase tracking-wide font-medium">Campaign Size</span>
-                      <span className="text-sm font-bold text-fuchsia-400 bg-fuchsia-500/10 px-3 py-1.5 rounded-lg border border-fuchsia-500/20">
-                        {campaign.campaignSize || 'Medium'}
-                      </span>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-
-              {/* Duplicate set for seamless loop */}
-              {musicCampaigns.map((campaign, index) => (
-                <motion.div
-                  key={`duplicate-${index}`}
-                  className="group relative shrink-0 w-75 sm:w-87.5 bg-purple-900/40 backdrop-blur-sm border border-purple-800/50 rounded-2xl overflow-hidden cursor-pointer hover:border-fuchsia-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-fuchsia-500/20"
-                  whileHover={{ y: -8 }}
-                >
-                  <div className="relative h-50 sm:h-60 overflow-hidden">
-                    <img
-                      src={campaign.image}
-                      alt={campaign.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
-                    <div className="absolute top-4 right-4 bg-purple-500/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1.5">
-                      <Instagram className="w-3.5 h-3.5 text-white" />
-                      <span className="text-xs font-bold text-white">{campaign.platform}</span>
-                    </div>
-                  </div>
-
-                  <div className="p-5 sm:p-6 flex flex-col h-50 justify-between">
-                    <div>
-                      <div className="flex items-start justify-between gap-2 mb-3">
-                        <h4 className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-fuchsia-400 group-hover:to-pink-400 transition-all duration-300">
-                          {campaign.name}
-                        </h4>
-                        {campaign.number && (
-                          <span className="shrink-0 text-xs font-bold text-fuchsia-400 bg-fuchsia-500/15 border border-fuchsia-500/30 px-2.5 py-0.5 rounded-full shadow-[0_0_10px_rgba(217,70,239,0.2)]">
-                            {campaign.number}
-                          </span>
-                        )}
-                      </div>
-
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <div className="flex items-center gap-1.5 mb-1">
-                            <TrendingUp className="w-4 h-4 text-fuchsia-400" />
-                            <div className="text-sm font-semibold text-white">{campaign.reach}</div>
-                          </div>
-                          <div className="text-xs text-gray-400 uppercase tracking-wide">Reach</div>
-                        </div>
-
-                        <div className="text-right">
-                          <div className="flex items-center justify-end gap-1.5 mb-1">
-                            <Users className="w-4 h-4 text-purple-400" />
-                            <div className="text-sm font-semibold text-white">{campaign.deliverables}</div>
-                          </div>
-                          <div className="text-xs text-gray-400 uppercase tracking-wide">Deliverables</div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mt-4 pt-4 border-t border-purple-800/50 flex justify-between items-center">
-                      <span className="text-sm text-gray-300 uppercase tracking-wide font-medium">Campaign Size</span>
-                      <span className="text-sm font-bold text-fuchsia-400 bg-fuchsia-500/10 px-3 py-1.5 rounded-lg border border-fuchsia-500/20">
-                        {campaign.campaignSize || 'Medium'}
-                      </span>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+          <InteractiveMusicMarquee campaigns={musicCampaigns} isInView={isInView} />
         </div>
 
         {/* Brand & PR Campaigns */}
