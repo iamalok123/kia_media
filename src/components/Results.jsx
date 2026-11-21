@@ -171,8 +171,7 @@ const Results = () => {
       deliverables: 80,
       campaignSize: "Medium",
       platform: "Instagram",
-      image:
-        "https://c.saavncdn.com/289/Harleys-In-Hawaii-English-2019-20260513081446-500x500.jpg",
+      image:"assets/harleys.png"
     },
     {
       name: "Inaam",
@@ -180,7 +179,7 @@ const Results = () => {
       deliverables: 80,
       campaignSize: "Medium",
       platform: "Instagram",
-      image: "https://i.scdn.co/image/ab67616d0000b27340e37f95f57c1df4dbf9ebc4",
+      image: "assets/inaam.jpeg",
     },
     {
       name: "Blush by Prateek Kuhad",
@@ -216,7 +215,7 @@ const Results = () => {
       deliverables: '120+',
       campaignSize: 'Medium',
       platform: "Instagram",
-      image: 'https://imgs.search.brave.com/b69df4K9fFB3-4zdcYSsOHnnuHahm2BUvl-xLWy75hw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS9q/TENIcFo2QjFnVS9t/YXhyZXNkZWZhdWx0/LmpwZw',
+      image: 'assets/easy.jpeg',
     },
     {
       name: '444 Song',
@@ -224,7 +223,7 @@ const Results = () => {
       deliverables: '15',
       campaignSize: 'Mini',
       platform: "Instagram",
-      image: 'https://imgs.search.brave.com/pTSxizIr4J1wPMv4scpq9lkC0DXAHyK8kJ36UO3lZ1w/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hMTAu/Z2FhbmFjZG4uY29t/L2duX2ltZy9hbGJ1/bXMvRHdQS09rQktx/Vi9QS09rNHFlcUtx/L3NpemVfbS5qcGc',
+      image: 'assets/444.jpeg',
     },
     {
       name: 'Jaadu Teri Nazar',
@@ -241,7 +240,7 @@ const Results = () => {
       deliverables: '70',
       campaignSize: 'Medium',
       platform: "Instagram",
-      image: 'https://imgs.search.brave.com/p94evszFYv9jVsP4lgayK8Rn5pTHjUPAbZE8rQ-wlfk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnNj/ZG4uY28vaW1hZ2Uv/YWI2NzYxNjEwMDAw/NTE3NGRhMDQ3NGFl/MDFkMzQ1NGI2ZjVk/ODE2Yg',
+      image: 'assets/bayaan.jpeg',
     },
     {
       name: 'Zara Zara',
@@ -265,7 +264,7 @@ const Results = () => {
       deliverables: '50+',
       campaignSize: 'Medium',
       platform: "Instagram",
-      image: 'https://imgs.search.brave.com/C8NhRkVGKeGhMyA1d1Nl68b_LO55Y_Y5qj-fnreSVHM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hMTAu/Z2FhbmFjZG4uY29t/L2duX2ltZy9hbGJ1/bXMvN3JWVzFSYms1/Ni9yVlcxRUQwbVdr/L3NpemVfbS5qcGc',
+      image: 'assets/jealous.jpeg',
     },
     {
       name: 'Diruba - Rito Riba ',
@@ -415,7 +414,7 @@ const Results = () => {
           </motion.h3>
 
           <div className="relative overflow-hidden">
-            <div className="flex animate-marquee whitespace-nowrap gap-6">
+            <div className="flex animate-marquee whitespace-nowrap gap-6" style={{ animationDuration: '90s' }}>
               {/* First set of cards */}
               {musicCampaigns.map((campaign, index) => (
                 <motion.div
