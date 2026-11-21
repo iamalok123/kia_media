@@ -375,7 +375,7 @@ const Results = () => {
       image: "https://i.scdn.co/image/ab67616d0000b273dc8799fc0000992578ec96e9",
     },
     {
-      name: "Harleys in Hawah",
+      name: "Harleys in Hawaii",
       reach: "25M",
       deliverables: 80,
       campaignSize: "Medium",
