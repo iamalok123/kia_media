@@ -22,9 +22,9 @@ const WhoWeAre = () => {
 
   const partnerLogos = [
     { id: 1, name: 'Netflix', src: 'https://i.ytimg.com/vi/ZMak63mHq5Y/maxresdefault.jpg', fit: 'cover' },
-    { id: 2, name: 'hitv', src: 'assets/hitvicon.png', fit: 'contain', padding: 'p-2' },
-    { id: 3, name: 'Amazon Prime', src: 'assets/primevideo.png', fit: 'contain', padding: 'p-2.5' },
-    { id: 4, name: 'Hotstar', src: 'assets/jiohotstar.png', fit: 'contain', padding: 'p-2.5' },
+    { id: 2, name: 'hitv', src: 'assets/hitv_card.png', fit: 'cover' },
+    { id: 3, name: 'Amazon Prime', src: 'assets/primevideo.png', fit: 'cover' },
+    { id: 4, name: 'Hotstar', src: 'assets/jiohotstar.png', fit: 'cover' },
     { id: 5, name: 'DashVerse', src: 'assets/dashverse.png', fit: 'contain', padding: 'p-3.5' },
   ];
 
